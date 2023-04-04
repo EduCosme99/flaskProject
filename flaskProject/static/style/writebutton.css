@@ -1,9 +1,10 @@
 .btn{
-    padding: 10px 15px;
-    width: 175px;
-    color: whitesmoke;
+    padding: 15px 20px;
+    width: 200px;
+    color: white;
     background: #E8E5E5;
     font-family: Aileron, Aileron-Bold;
+    font-size: 15px;
     border-radius: 50px;
     border: 0px;
     display: block;
