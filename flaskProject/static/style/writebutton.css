@@ -1,6 +1,7 @@
 .btn{
     padding: 15px 20px;
     width: 200px;
+    height: 50px;
     color: white;
     background: #E8E5E5;
     font-family: Aileron, Aileron-Bold;
@@ -27,6 +28,7 @@
 
 .btn:active {
     color: black;
+    opacity: 0;
 }
 
 .btn[contenteditable="true"]::after {
@@ -35,4 +37,6 @@
 
 .btn[contenteditable="true"] {
     color: black;
+    caret-color: black;
+    align-content: center;
 }
