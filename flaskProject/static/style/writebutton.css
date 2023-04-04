@@ -1,0 +1,15 @@
+.btn{
+    padding: 10px 15px;
+    width: 175px;
+    color: whitesmoke;
+    background: #E8E5E5;
+    font-family: Aileron, Aileron-Bold;
+    border-radius: 50px;
+    border: 0px;
+    display: block;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 50px;
+}
