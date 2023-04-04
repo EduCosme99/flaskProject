@@ -34,5 +34,12 @@
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN GERAL</h1>
     <button class="btn">Password</button>
+    <script>
+        const btnPassword = document.querySelector('.btn');
+        btnPassword.addEventListener('click', () => {
+            btnPassword.setAttribute('contenteditable', 'true');
+            btnPassword.focus();
+        });
+    </script>
   </body>
 </html>
