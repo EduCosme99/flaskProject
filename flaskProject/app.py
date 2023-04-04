@@ -13,5 +13,10 @@ def pag_inicial():
 def login_geral():
     return render_template('LoginGeral.html')
 
+
+@app.route('/supervisores')
+def login_supervisores():
+    return render_template('LoginSupervisores.html')
+
 if __name__ == '__main__':
     app.run()
