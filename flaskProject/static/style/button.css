@@ -12,7 +12,7 @@
     cursor: pointer;
     margin: 0 auto;
     margin-top: 50px;
-    transition: box-shadow 1.15s, opacity 1.15s;
+    transition: box-shadow 0.5s, opacity 0.5s, font-weight 0.5s;
 }
 
 .login_button {
@@ -23,10 +23,10 @@
 }
 
 .small_btn:hover {
-    opacity: 0.8;
     box-shadow: 5px 5px 10px rgba(10,10,10,0.2);
+    font-weight: bold;
 }
 
 .small_btn:active {
-    opacity: 0.6;
+    opacity: 0.8;
 }

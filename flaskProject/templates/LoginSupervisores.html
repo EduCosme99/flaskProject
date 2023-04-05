@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/static/style/writebutton.css">
-    <link rel="stylesheet" href="/static/style/button.css">
+      <link rel="stylesheet" href="/static/style/writebutton.css">
+      <link rel="stylesheet" href="/static/style/button.css">
+      <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
     <style>
       /*Estilo Imagem*/
       #logo {
@@ -18,19 +19,17 @@
         text-align: center;
         font-family: Lato, Lato-Light;
       }
-      /*Estilo SetaVoltar*/
-      #SetaVoltar {
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          width: 30px;
-          height: 30px;
+      /*Estilo Seta*/
+      .seta:hover {
+          box-shadow: 5px 5px 10px rgba(10,10,10,0.5);
+          cursor: pointer;
+          transform: scale(1.1);
       }
     </style>
   </head>
   <body>
     <a href="/">
-        <img src="static/images/SetaVoltar.png" id="SetaVoltar">
+        <i class="fa-solid fa-circle-left fa-2xl seta" style="color: #FFA500; margin-top: 15px;" ></i>
     </a>
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN SUPERVISORES</h1>
