@@ -34,19 +34,8 @@
     </a>
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN SUPERVISORES</h1>
-    <div class="btn" class="editable" onclick="this.innerHTML=''" contenteditable>Email</div>
-    <div class="btn" class="editable" onclick="this.innerHTML=''" contenteditable>Password</div>
-    <script>
-        const btns = document.querySelectorAll('.btn');
-        btns.forEach(btn => {
-            btn.addEventListener('keydown', () => {
-                btn.classList.add('editable');
-            });
-            btn.addEventListener('blur', () => {
-                btn.classList.remove('editable');
-            });
-        });
-    </script>
+    <input type="email" class="btn" placeholder="Email"></input>
+    <input type="password" class="btn" placeholder="Password"></input>
     <div class="login_button">
         <button class="small_btn">Login</button>
     </div>
