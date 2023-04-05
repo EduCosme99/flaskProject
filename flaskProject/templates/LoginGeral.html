@@ -34,15 +34,7 @@
     </a>
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN GERAL</h1>
-    <div class="btn" class="editable" onclick="this.innerHTML=''" contenteditable>Password</div>
-    <script>
-        const btnPassword = document.querySelector('.btn');
-        btnPassword.addEventListener('keydown', () => {
-            btnPassword.classList.add('editable');
-        });
-        btnPassword.addEventListener('blur', () => {
-            btnPassword.classList.add('editable');
-        });
+    <input type="password" class="btn" placeholder="Password"></input>
     </script>
     <div class="login_button">
         <button class="small_btn">Login</button>
