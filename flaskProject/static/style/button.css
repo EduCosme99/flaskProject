@@ -1,9 +1,10 @@
 .small_btn{
-    padding: 15px 20px;
+    padding: 15px 15px;
     width: 135px;
-    color: black;
-    background: #FFA500;
-    font-family: Aileron, Aileron-Black;
+    color: #FFA500;
+    background: #1E1C1B;
+    font-family: "Avenir LT Std 65 Medium";
+    font-size: 14px;
     border-radius: 50px;
     border: 0px;
     display: block;
