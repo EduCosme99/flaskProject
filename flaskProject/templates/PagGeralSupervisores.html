@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Supervisores</title>
+	<style>
+		#cabeçalho{
+			height: 150px;
+			background-color: #ffffff;
+		}
+		#left-section {
+			height: 300px;
+			width: 800px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #FFA500;
+			border: 2px solid black;
+		}
+
+		#left-section button {
+			padding: 10px 20px;
+			margin: 10px;
+			border-radius: 5px;
+			background-color: #dddddd;
+			color: black;
+			font-size: 16px;
+			cursor: pointer;
+			float: left;
+		}
+
+		#right-section__top {
+			height: 300px;
+			width: 800px;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #dddddd;
+			float: right;
+			border: 2px solid black;
+		}
+		#right-section__bottom {
+			height: 300px;
+			width: 800px;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #ffffff;
+			float: right;
+			border: 2px solid black;
+
+		}
+		#right-section button {
+			padding: 10px 20px;
+			margin: 10px;
+			border-radius: 5px;
+			background-color: #dddddd;
+			color: black;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		#fim{
+			height: 150px;
+			background-color: #ffffff;
+			clear:both;
+		}
+
+	</style>
+</head>
+<body>
+    <div id="cabeçalho">
+		Header
+	</div>
+	<div id="left-section">
+		<h2>Checklist</h2>
+		<button>Checklist 1</button>
+		<button>Checklist 2</button>
+	</div>
+		<div id="right-section">
+			<div id="right-section__top">
+				<h2>Turnos</h2>
+				<button>Turno 1</button>
+				<button>Turno 2</button>
+    		</div>
+    			<div id="right-section__bottom">
+      				<h2>Funcionarios</h2>
+					<button>Funcionario 1</button>
+					<button>Funcionario 2</button>
+				</div>
+		</div>
+	<div id="fim">
+		<h2>data</h2>
+	</div>
+</body>
+</html>
