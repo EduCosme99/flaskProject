@@ -24,3 +24,11 @@
 .btn:focus {
     outline: none;
 }
+
+input[type="email"] {
+        color: black;
+}
+
+input[type="password"] {
+        color: black;
+}
