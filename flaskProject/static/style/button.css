@@ -1,4 +1,4 @@
-.btn{
+.small_btn{
     padding: 15px 20px;
     width: 135px;
     color: black;
@@ -12,4 +12,11 @@
     cursor: pointer;
     margin: 0 auto;
     margin-top: 50px;
+}
+
+.login_button {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
 }
