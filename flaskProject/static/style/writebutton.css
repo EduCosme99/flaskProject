@@ -1,7 +1,8 @@
 .btn{
-    padding: 15px 20px;
+    padding: 5px 10px;
     width: 200px;
     height: 50px;
+    margin: 10px;
     color: white;
     background: #E8E5E5;
     font-family: Aileron, Aileron-Bold;
@@ -10,10 +11,14 @@
     border: 0px;
     display: block;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     user-select: none;
     cursor: pointer;
     margin: 0 auto;
     margin-top: 50px;
+    line-height: 50px;
 }
 
 .btn::after {
@@ -39,4 +44,16 @@
     color: black;
     caret-color: black;
     align-content: center;
+}
+
+.btn.editable {
+    color: black;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn[contenteditable="true"]:focus {
+        background-color: #FFA500;
 }
