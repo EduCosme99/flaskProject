@@ -1,10 +1,22 @@
 from flask import Flask, render_template
-
-db = SQLAlchemy()
-DB_NAME = "continental.db"
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///continental.db'
+db = SQLAlchemy(app)
 
+
+class Funcionario(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    nome = db.Column(db.String(length=256), nullable=False)
+    email = db.Column(db.String(length=256), nullable=False, unique=True)
+    password = db.Column(db.String(length=30), nullable=False)
+    posto = db.Column(db.Integer(), nullable=False)
+    linha = db.Column(db.Integer(), nullable=False)
+
+
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 @app.route('/login')
@@ -21,10 +33,11 @@ def login_geral():
 def login_supervisores():
     return render_template('LoginSupervisores.html')
 
-if __name__ == '__main__':
-    app.run()
 
 @app.route('/paginasupervisores')
 def pagina_supervisores():
     return render_template('PagGeralSupervisores.html')
 
+
+if __name__ == '__main__':
+    app.run()
