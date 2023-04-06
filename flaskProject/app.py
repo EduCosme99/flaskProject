@@ -16,7 +16,6 @@ class Funcionario(db.Model):
     id_turno = db.Column(db.Integer(), db.ForeignKey('turno.id'), nullable=False)
     turno = db.relationship('Turno', backref='funcionarios')
 
-
 class Turno(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     inicio_turno = db.Column(db.DateTime(), nullable=False)
