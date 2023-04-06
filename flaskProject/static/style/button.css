@@ -1,9 +1,9 @@
 .small_btn{
     padding: 15px 15px;
     width: 135px;
-    color: #FFA500;
-    background: #1E1C1B;
-    font-family: "Avenir LT Std 65 Medium";
+    color: #1E1C1B;
+    background: #FFA500;
+    font-family: "Trebuchet MS", sans-serif;
     font-size: 14px;
     border-radius: 50px;
     border: 0px;
@@ -13,7 +13,7 @@
     cursor: pointer;
     margin: 0 auto;
     margin-top: 50px;
-    transition: box-shadow 0.5s, opacity 0.5s, font-weight 0.5s;
+    transition: box-shadow 0.15s, opacity 0.15s, font-weight 0.15s;
 }
 
 .login_button {
