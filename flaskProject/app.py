@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 
+db = SQLAlchemy()
+DB_NAME = "continental.db"
+
 app = Flask(__name__)
 
 
