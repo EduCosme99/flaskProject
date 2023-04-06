@@ -24,3 +24,4 @@ if __name__ == '__main__':
 @app.route('/paginasupervisores')
 def pagina_supervisores():
     return render_template('PagGeralSupervisores.html')
+

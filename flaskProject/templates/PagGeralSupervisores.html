@@ -4,93 +4,249 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="/flaskProject/static/style/PagGeralSp.css">
 	<title>Menu Supervisores</title>
 	<style>
+		.container {
+			display: grid;
+			height: 100vh;
+			grid-template-columns: 0.5fr 1.9fr 0.8fr 0.8fr;
+			grid-template-rows: 0.5fr 2fr 1.2fr 0.3fr;
+			grid-template-areas: "cabeçalho cabeçalho cabeçalho cabeçalho"
+								 "checklits checklists turnos turnos"
+								 "checklits checklists funcionarios funcionarios"
+			                     "data data data data";
+			grid-gap:1.5em;
+			//*font-size:25px;
+			font-family:Aileron, Aileron-Black;
+			text-align: center;**/
+		}
 		#cabeçalho{
-			height: 150px;
-			background-color: #ffffff;
-		}
-		#left-section {
-			height: 300px;
-			width: 800px;
 			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			background-color: #FFA500;
-			border: 2px solid black;
+			justify-content: space-between;
+			background-color: white;
+			grid-area: cabeçalho;
 		}
-
-		#left-section button {
-			padding: 10px 20px;
+		/*#cabeçalho img{
+			height: 90px;
+			width: 150px;
+		} */
+		#checklists{
+			background-color: white;
+			grid-area: checklists;
+			border: 2px solid black;
+			display: flex;
+    		flex-direction: column;
+			text-align: center;
+			font-size:25px;
 			margin: 10px;
-			border-radius: 5px;
-			background-color: #dddddd;
-			color: black;
-			font-size: 16px;
-			cursor: pointer;
-			float: left;
-		}
-
-		#right-section__top {
-			height: 300px;
-			width: 800px;
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			background-color: #dddddd;
-			float: right;
-			border: 2px solid black;
-		}
-		#right-section__bottom {
-			height: 300px;
-			width: 800px;
-			flex: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			background-color: #ffffff;
-			float: right;
-			border: 2px solid black;
+			overflow: auto;
 
 		}
-		#right-section button {
-			padding: 10px 20px;
+		#funcionarios{
+			background-color: white;
+			grid-area: funcionarios;
+			border: 2px solid black;
+			text-align: center;
+			font-size:25px;
+			display: flex;
+    		flex-direction: column;
 			margin: 10px;
-			border-radius: 5px;
-			background-color: #dddddd;
-			color: black;
-			font-size: 16px;
-			cursor: pointer;
+			overflow: auto
+		}
+		#turnos{
+			background-color: white;
+			grid-area: turnos;
+			border: 2px solid black;
+			text-align: center;
+			font-size:25px;
+			display: flex;
+    		flex-direction: column;
+			margin: 10px;
+			overflow: auto
+		}
+		#data{
+			background-color: aliceblue;
+			grid-area: data;
 		}
 
-		#fim{
-			height: 150px;
-			background-color: #ffffff;
-			clear:both;
+		.botao-checklist {
+		width: 95%;
+		height: 95%;
+		display: block;
+		margin: 5px 0;
+		padding: 15px;
+		border: none;
+		border-radius: 5px;
+		background-color: lightgrey;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+		outline: none;
+		margin: 10px;
+	  	}
+
+		.botao-checklist:hover {
+  		background-color: #FFA500;
+  		color: white;
 		}
+
+		.botao-checklist {
+		width: 95%;
+		height: 95%;
+		display: block;
+		margin: 5px 0;
+		padding: 15px;
+		border: none;
+		border-radius: 5px;
+		background-color: lightgrey;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+		outline: none;
+		margin: 10px;
+	  	}
+
+		.botao-checklist:hover {
+  		background-color: #FFA500;
+  		color: white;
+		}
+
+		input[type=checkbox] {
+  		display: none;
+		}
+
+		label {
+		display: flex;
+		align-items: center;
+	 	 }
+
+		input[type=checkbox] + .botao-checklist {
+			margin-left: 10px;
+		}
+
+
+		input[type=checkbox] + label:after {
+		  content: "";
+		  display: inline-block;
+		  width: 40px;
+		  height: 40px;
+		  border: 1px solid gray;
+		  margin-right: 10px;
+		  vertical-align: middle;
+		}
+
+		input[type=checkbox]:checked + label:after {
+		  content: "\2713"; /* caractere de marca de seleção (check mark)
+		  background-color: #FFA500;
+		  color: white;
+		  text-align: center;
+		  line-height: 40px;
+		}
+
+
+input[type=checkbox] + label:after {
+  content: "❌";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid gray;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+input[type=checkbox]:checked + label:after {
+  content: "✔️";
+  background-color: #FFA500;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
+
+input[type=checkbox].exclamation + label:after {
+  content: "❗";
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
+
+input[type=checkbox].question + label:after {
+  content: "❓";
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}*/
+
 
 	</style>
 </head>
 <body>
+<div class="container">
+	<div id="cabeçalho">imagem</div>
+		<!--<div id="logo">
+			<img scr=".png">
+		</div>--!>
+	<div id="checklists">
+		<h2>CHECKLISTS DO DIA<h2>
+  <div class="botoes-checklist">
+    <input type="checkbox" id="checklist1" name="checklist1" value="checklist1">
+    <label for="checklist1"><button class="botao-checklist">Checklist 1</button></label>
+    <input type="checkbox" id="checklist2" name="checklist2" value="checklist2">
+    <label for="checklist2"><button class="botao-checklist">Checklist 2</button></label>
+
+    <input type="checkbox" id="checklist3" name="checklist3" value="checklist3">
+	<label for="checklist3"><button class="botao-checklist">Checklist 3</button></label>
+
+	<input type="checkbox" id="checklist4" name="checklist4" value="checklist4">
+    <label for="checklist4"><button class="botao-checklist">Checklist 4</button></label>
+
+	 <input type="checkbox" id="checklist5" name="checklist5" value="checklist5">
+    <label for="checklist5"><button class="botao-checklist">Checklist 5</button></label>
+
+	 <input type="checkbox" id="checklist6" name="checklist6" value="checklist6">
+    <label for="checklist6"><button class="botao-checklist">Checklist 6</button></label>
+
+	 <input type="checkbox" id="checklist7" name="checklist7" value="checklist7">
+    <label for="checklist7"><button class="botao-checklist">Checklist 7</button></label>
+
+	 <input type="checkbox" id="checklist8" name="checklist8" value="checklist8">
+    <label for="checklist8"><button class="botao-checklist">Checklist 8</button></label>
+
+	 <input type="checkbox" id="checklist9" name="checklist9" value="checklist9">
+    <label for="checklist9"><button class="botao-checklist">Checklist 9</button></label>
+  </div>
+</div>
+	<div id="turnos">
+		<h2>TURNOS<h2>
+
+	</div>
+	<div id="funcionarios">
+		<h2>FUNCIONÁRIOS<h2>
+	</div>
+</div>
+	<div id="data">data</div>
+</div>
+<ul>
+
+
+<!--
     <div id="cabeçalho">
 		Header
 	</div>
-	<div id="left-section">
+	<div class="left-section">
 		<h2>Checklist</h2>
 		<button>Checklist 1</button>
 		<button>Checklist 2</button>
 	</div>
-		<div id="right-section">
-			<div id="right-section__top">
+		<div class="right-section">
+			<div class="right-section__top">
 				<h2>Turnos</h2>
 				<button>Turno 1</button>
 				<button>Turno 2</button>
     		</div>
-    			<div id="right-section__bottom">
+    			<div class="right-section__bottom">
       				<h2>Funcionarios</h2>
 					<button>Funcionario 1</button>
 					<button>Funcionario 2</button>
@@ -98,6 +254,6 @@
 		</div>
 	<div id="fim">
 		<h2>data</h2>
-	</div>
+	</div>--!>
 </body>
 </html>
