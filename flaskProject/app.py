@@ -13,6 +13,14 @@ class Funcionario(db.Model):
     password = db.Column(db.String(length=30), nullable=False)
     posto = db.Column(db.Integer(), nullable=False)
     linha = db.Column(db.Integer(), nullable=False)
+    id_turno = db.Column(db.Integer(), db.ForeignKey('turno.id'), nullable=False)
+    turno = db.relationship('Turno', backref='funcionarios')
+
+
+class Turno(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    inicio_turno = db.Column(db.DateTime(), nullable=False)
+    fim_turno = db.Column(db.DateTime(), nullable=False)
 
 
 with app.app_context():
