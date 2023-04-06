@@ -9,12 +9,27 @@ db = SQLAlchemy(app)
 class Funcionario(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     nome = db.Column(db.String(length=256), nullable=False)
-    email = db.Column(db.String(length=256), nullable=False, unique=True)
+    email = db.Column(db.String(length=256), nullable=True, unique=True)
     password = db.Column(db.String(length=30), nullable=False)
     posto = db.Column(db.Integer(), nullable=False)
     linha = db.Column(db.Integer(), nullable=False)
     id_turno = db.Column(db.Integer(), db.ForeignKey('turno.id'), nullable=False)
     turno = db.relationship('Turno', backref='funcionarios')
+    id_cargo = db.Column(db.Integer(), db.ForeignKey('cargo.id'), nullable=False)
+    cargo = db.relationship('Cargo', backref='funcionarios')
+
+
+class Checklist(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    ckl_inicio = db.Column(db.DateTime(), nullable=False)
+    ckl_fim = db.Column(db.DateTime(), nullable=False)
+    aprovacao = db.Column(db.Boolean(),nullable=False)
+
+
+class Cargo(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    descricao_cargo = db.Column(db.String(length=100), nullable=False, unique=True)
+
 
 class Turno(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
