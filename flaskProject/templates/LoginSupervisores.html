@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/static/style/writebutton.css">
-    <link rel="stylesheet" href="/static/style/button.css">
-    <style>
+      <title>Login Supervisores</title>
+      <link rel="stylesheet" href="/static/style/writebutton.css">
+      <link rel="stylesheet" href="/static/style/button.css">
+      <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
+      <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(to right, #1E1C1B, #E89600, #1E1C1B);
+        }
       /*Estilo Imagem*/
       #logo {
           width: 400px;
@@ -14,39 +24,37 @@
       }
       /*Estilo Header*/
       h1 {
-        color: #FFA500;
+        color: black;
         text-align: center;
-        font-family: Lato, Lato-Light;
+        font-family: "Avenir LT Std 65 Medium";
       }
-      /*Estilo SetaVoltar*/
-      #SetaVoltar {
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          width: 30px;
-          height: 30px;
+      /*Estilo Seta*/
+      .seta:hover {
+          box-shadow: 5px 5px 10px rgba(10,10,10,0.5);
+          cursor: pointer;
+          transform: scale(1.1);
       }
-    </style>
+      /*Estilo 'Recuperar Password'*/
+      .recuperar_password {
+          display: block;
+          margin-top: 10px;
+          color: black;
+          text-decoration: none;
+          text-align: center;
+          font-family: Aileron, Aileron-Bold;
+          font-size: 12px;
+          font-weight: bold;
+          text-align: center;
+          vertical-align: middle;
+      }
+      </style>
   </head>
   <body>
-    <a href="/">
-        <img src="static/images/SetaVoltar.png" id="SetaVoltar">
-    </a>
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN SUPERVISORES</h1>
-    <div class="btn" class="editable" onclick="this.innerHTML=''" contenteditable>Email</div>
-    <div class="btn" class="editable" onclick="this.innerHTML=''" contenteditable>Password</div>
-    <script>
-        const btns = document.querySelectorAll('.btn');
-        btns.forEach(btn => {
-            btn.addEventListener('keydown', () => {
-                btn.classList.add('editable');
-            });
-            btn.addEventListener('blur', () => {
-                btn.classList.remove('editable');
-            });
-        });
-    </script>
+    <input type="email" class="btn" placeholder="Email"></input>
+    <input type="password" class="btn" placeholder="Password"></input>
+    <a href="/" class="recuperar_password">Recuperar password</a>
     <div class="login_button">
         <button class="small_btn">Login</button>
     </div>

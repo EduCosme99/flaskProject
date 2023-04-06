@@ -1,9 +1,10 @@
 .small_btn{
-    padding: 15px 20px;
+    padding: 15px 15px;
     width: 135px;
-    color: black;
-    background: #FFA500;
-    font-family: Aileron, Aileron-Black;
+    color: #FFA500;
+    background: #1E1C1B;
+    font-family: "Avenir LT Std 65 Medium";
+    font-size: 14px;
     border-radius: 50px;
     border: 0px;
     display: block;
@@ -12,6 +13,7 @@
     cursor: pointer;
     margin: 0 auto;
     margin-top: 50px;
+    transition: box-shadow 0.5s, opacity 0.5s, font-weight 0.5s;
 }
 
 .login_button {
@@ -19,4 +21,13 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.small_btn:hover {
+    box-shadow: 5px 5px 10px rgba(10,10,10,0.2);
+    font-weight: bold;
+}
+
+.small_btn:active {
+    opacity: 0.8;
 }
