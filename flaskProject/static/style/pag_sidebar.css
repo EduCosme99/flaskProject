@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Aileron, Aileron-Bold;
+}
+
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 260px;
+    background: #1E1C1B;
+}
