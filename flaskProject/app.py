@@ -94,10 +94,5 @@ def pagina_supervisores():
     return render_template('PagGeralSupervisores.html')
 
 
-@app.route('/paginageral')
-def pagina_geral():
-    return render_template('PagFuncionarios.html')
-
-
 if __name__ == '__main__':
     app.run()
