@@ -8,38 +8,40 @@
         <link rel="stylesheet" href="/static/style/navigation_bar.css">
         <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
     </head>
-<body>
-    <nav>
-        <div class="nav-bar">
-            <span class="logo"><a href="#">Continental</a></span>
-            <div class="menu">
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Checklists</a></li>
-                    <li><a href="#">Funcionários</a></li>
-                    <li><a href="#">Parâmetros</a></li>
-                </ul>
-            </div>
-            <div class="searchBox">
-                <div class="searchToogle">
-                    <i class="fa-solid fa-magnifying-glass search"></i>
-                    <i class="fa-solid fa-xmark cancel"></i>
+    <body>
+        <nav>
+            <div class="nav-bar">
+                <a class="logotipo" href="#">
+                    <img src="/static/images/logo.png" alt="Continental" class="logo">
+                </a>
+                <div class="menu">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Checklists</a></li>
+                        <li><a href="#">Funcionários</a></li>
+                        <li><a href="#">Parâmetros</a></li>
+                    </ul>
                 </div>
-                <div class="search-field">
-                    <input type="text" placeholder="Pesquisar...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="searchBox">
+                    <div class="searchToogle">
+                        <i class="fa-solid fa-magnifying-glass search"></i>
+                        <i class="fa-solid fa-xmark cancel"></i>
+                    </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="Pesquisar...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <script>
-        const body = document.querySelector("body"),
-            nav = document.querySelector("nav"),
-            searchToggle = document.querySelector(".searchToogle");
+        </nav>
+        <script>
+            const body = document.querySelector("body"),
+                nav = document.querySelector("nav"),
+                searchToggle = document.querySelector(".searchToogle");
 
             searchToggle.addEventListener("click", () => {
                 searchToggle.classList.toggle("active");
             });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
