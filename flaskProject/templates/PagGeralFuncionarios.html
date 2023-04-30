@@ -34,14 +34,29 @@
                 </div>
             </div>
         </nav>
+        <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
+            <span id="date"></span> - <span id="time"></span>
+        </div>
         <script>
             const body = document.querySelector("body"),
                 nav = document.querySelector("nav"),
-                searchToggle = document.querySelector(".searchToogle");
+                searchToggle = document.querySelector(".searchToogle"),
+                dateElem = document.querySelector("#date"),
+                timeElem = document.querySelector("#time");
 
             searchToggle.addEventListener("click", () => {
                 searchToggle.classList.toggle("active");
             });
+
+            function updateTime() {
+                const now = new Date();
+                const date = now.toLocaleDateString();
+                const time = now.toLocaleTimeString();
+                dateElem.textContent = date;
+                timeElem.textContent = time;
+            }
+
+            setInterval(updateTime, 1000);
         </script>
     </body>
 </html>
