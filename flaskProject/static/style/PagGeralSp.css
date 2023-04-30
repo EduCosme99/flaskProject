@@ -12,17 +12,15 @@
 	font-family:Aileron, Aileron-Black;
 	text-align: center;**/
 }
-#cabeçalho{
+
+#cabeçalho {
 	display: flex;
 	justify-content: space-between;
 	background-color: white;
 	grid-area: cabeçalho;
 }
-/*#cabeçalho img{
-	height: 90px;
-	width: 150px;
-} */
-#checklists{
+
+#checklists {
 	background-color: white;
 	grid-area: checklists;
 	border: 2px solid black;
@@ -34,7 +32,8 @@
 	overflow: auto;
 
 }
-#funcionarios{
+
+#funcionarios {
 	background-color: white;
 	grid-area: funcionarios;
 	border: 2px solid black;
@@ -45,7 +44,8 @@
 	margin: 10px;
 	overflow: auto
 }
-#turnos{
+
+#turnos {
 	background-color: white;
 	grid-area: turnos;
 	border: 2px solid black;
@@ -56,7 +56,8 @@
 	margin: 10px;
 	overflow: auto
 }
-#data{
+
+#data {
 	background-color: aliceblue;
 	grid-area: data;
 }
@@ -110,12 +111,11 @@ input[type=checkbox] {
 label {
 	display: flex;
 	align-items: center;
- }
+}
 
 input[type=checkbox] + .botao-checklist {
 	margin-left: 10px;
 }
-
 
 input[type=checkbox] + label:after {
 	  content: "";
@@ -126,13 +126,15 @@ input[type=checkbox] + label:after {
 	  margin-right: 10px;
 	  vertical-align: middle;
 }
+
 input[type=checkbox]:checked + label:after {
 	  content: "\2713"; /* caractere de marca de seleção (check mark)*/
 	  background-color: #FFA500;
 	  color: white;
 	  text-align: center;
 	  line-height: 40px;
-	}
+}
+
 #botoes-turnos {
   display: flex;
   flex-direction: column;

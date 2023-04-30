@@ -4,10 +4,32 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sidebar Menu</title>
-        <link rel="stylesheet" href="pag_sidebar.css">
+        <title>Navigation Bar</title>
+        <link rel="stylesheet" href="/static/style/navigation_bar.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     </head>
 <body>
-    <nav class="sidebar"></nav>
+    <nav class="nav">
+        <a href="#" class="logo">Continental</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Checklists</a></li>
+            <li><a href="#">Funcionários</a></li>
+            <li><a href="#">Parâmetros</a></li>
+        </ul>
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box" id="searchBox">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Pesquisar..." />
+        </div>
+    </nav>
+    <script>
+        const searchIcon = document.getElementById("searchIcon");
+        const searchBox = document.getElementById("searchBox");
+
+        searchIcon.addEventListener("click", () => {
+            searchBox.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
