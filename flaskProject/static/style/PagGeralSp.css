@@ -13,16 +13,16 @@
 	text-align: center;**/
 }
 
-#cabeçalho {
+.cabeçalho {
 	display: flex;
 	justify-content: space-between;
 	background-color: white;
 	grid-area: cabeçalho;
 }
 
-#checklists {
-	background-color: white;
+.checklists {
 	grid-area: checklists;
+	background-color: white;
 	border: 2px solid black;
 	display: flex;
 	flex-direction: column;
@@ -35,7 +35,6 @@
 
 #funcionarios {
 	background-color: white;
-	grid-area: funcionarios;
 	border: 2px solid black;
 	text-align: center;
 	font-size:25px;
@@ -62,7 +61,7 @@
 	grid-area: data;
 }
 
-.botao-checklist {
+ /*.botao-checklist {
 	width: 95%;
 	height: 95%;
 	display: block;
@@ -75,19 +74,19 @@
 	font-size: 16px;
 	cursor: pointer;
 	outline: none;
-	margin: 10px;
-}
+	margin: 10px;*
+}*/
 
 .botao-checklist:hover {
 	background-color: #FFA500;
 	color: white;
 }
 
-.botao-checklist {
+.botao-checklist{
 	width: 95%;
 	height: 95%;
 	display: block;
-	margin: 5px 0;
+	margin: 5px ;
 	padding: 15px;
 	border: none;
 	border-radius: 5px;
@@ -134,13 +133,13 @@ input[type=checkbox]:checked + label:after {
 	  text-align: center;
 	  line-height: 40px;
 }
-
-#botoes-turnos {
+/*
+#botao-turnos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 .botao-turno {
   width: 100%;
@@ -158,8 +157,7 @@ input[type=checkbox]:checked + label:after {
 .botao-turno:hover {
   background-color: #FFA500;
   color: white;
-}
-
+}*/
 
 
 
