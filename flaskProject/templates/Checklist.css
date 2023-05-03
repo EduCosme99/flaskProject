@@ -13,24 +13,67 @@ header {
 /* Define o estilo da classe content, que contém as três zonas */
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50% calc(100% - 100px) 1fr;
   height: calc(100vh - 80px); /* Ajusta a altura para que a altura da página seja usada, menos a altura do cabeçalho */
+  grid-gap: 20px;
 }
 
 /* Define o estilo da classe zone1 */
 .zone1 {
   background-color: #f2f2f2;
   padding: 10px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
 }
 
 /* Define o estilo da classe zone2 */
 .zone2 {
   background-color: #e6e6e6;
   padding: 10px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 /* Define o estilo da classe zone3 */
 .zone3 {
   background-color: #d9d9d9;
   padding: 10px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
+
+.checkboxes {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+}
+
+/*
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.zone1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+.zone2 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.zone3 {
+ grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+}*/
