@@ -98,6 +98,10 @@ def pagina_supervisores():
 def pagina_funcionarios():
     return render_template('PagGeralFuncionarios.html')
 
+@app.route('/checklists')
+def checklists():
+    return render_template('Checklist.html')
+
 
 if __name__ == '__main__':
     app.run()
