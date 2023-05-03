@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html>
+  <head>
+    <title>Minha Página com Grids</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-</body>
+      header {
+        height: 80px;
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: calc(100vh - 80px);
+      }
+
+      .zone1 {
+        background-color: #f2f2f2;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .zone2 {
+        background-color: #e6e6e6;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      .zone3 {
+        background-color: #d9d9d9;
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Minha Página com Grids</h1>
+    </header>
+
+    <div class="content">
+      <div class="zone1">
+        <h2>Zona 1</h2>
+        <p>Conteúdo da Zona 1</p>
+      </div>
+      <div class="zone2">
+        <h2>Zona 2</h2>
+        <p>Conteúdo da Zona 2</p>
+      </div>
+      <div class="zone3">
+        <h2>Zona 3</h2>
+        <p>Conteúdo da Zona 3</p>
+      </div>
+    </div>
+  </body>
 </html>

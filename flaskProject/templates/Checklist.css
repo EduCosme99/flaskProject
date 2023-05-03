@@ -1,0 +1,36 @@
+/* Define o tamanho da fonte e a cor do texto padrão */
+body {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Define o estilo do cabeçalho */
+header {
+  background-color: #ccc;
+  padding: 10px;
+}
+
+/* Define o estilo da classe content, que contém as três zonas */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: calc(100vh - 80px); /* Ajusta a altura para que a altura da página seja usada, menos a altura do cabeçalho */
+}
+
+/* Define o estilo da classe zone1 */
+.zone1 {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Define o estilo da classe zone2 */
+.zone2 {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+
+/* Define o estilo da classe zone3 */
+.zone3 {
+  background-color: #d9d9d9;
+  padding: 10px;
+}
