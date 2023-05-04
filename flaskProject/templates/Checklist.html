@@ -20,9 +20,10 @@
 
       .content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 0.3fr 1fr;
         grid-template-rows: 1fr;
         height: calc(100vh - 80px);
+        align-items: stretch;
       }
 
       .zone1 {
@@ -35,6 +36,26 @@
         background-color: #e6e6e6;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+      }
+      .zone2 .checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .zone2 .checkboxes > div {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      .zone2 .checkboxes input[type="checkbox"] {
+        display: inline-block;
+        margin: 0;
+        width: auto;
       }
 
       .zone3 {
@@ -42,34 +63,96 @@
         grid-column: 3 / 4;
         grid-row: 1 / 2;
       }
+
     </style>
   </head>
   <body>
     <header>
-      <h1>Minha Página com Grids</h1>
+      <h1>Checklist</h1>
     </header>
-
     <div class="content">
       <div class="zone1">
         <h2>Operação de Verificação antes de iniciar produção:</h2>
-        <p>.....</p>
+        <p>______</p>
         <ul>
-          <li> Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</li>
-          <li>O modelo eléctrico está OK no EOL?</li>
-          <li>O programa de soldadura é o correcto? Verificar lista programas</li>
+          <button>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</button>
+      <button>O modelo eléctrico está OK no EOL?</button>
+      <button>O programa de soldadura é o correcto? Verificar lista programas</button>
+      <button>O programa do objectivo é o correcto (Referência da antena)?</button>
+      <button>O status dos FDs são os correctos? (Verificar listagem de status)</button>
+      <button>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</button>
         </ul>
       </div>
-      <div class="zone2">
-        <h2>Zona 2</h2>
-        <p>Conteúdo da Zona 2</p>
-         <div class="checkboxes">
-          <input type="checkbox" id="checkbox1"><label for="checkbox1">Checkbox 1</label>
-          <input type="checkbox" id="checkbox2"><label for="checkbox2">Checkbox 2</label>
+        <div class="zone2">
+
+        <p>Início do turno:</p>
+        <p>Hora:</p>
+        <div class="checkboxes">
+          <div class="checkbox-row">
+            <input type="checkbox" id="checkbox1"><label for="checkbox1"></label>
+            <input type="checkbox" id="checkbox2"><label for="checkbox2"></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="checkbox3"><label for="checkbox3"></label>
+            <input type="checkbox" id="checkbox4"><label for="checkbox4"></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="checkbox5"><label for="checkbox5"></label>
+            <input type="checkbox" id="checkbox6"><label for="checkbox6"></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="checkbox7"><label for="checkbox7"></label>
+            <input type="checkbox" id="checkbox8"><label for="checkbox8"></label>
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="checkbox9"><label for="checkbox9"></label>
+            <input type="checkbox" id="checkbox10"><label for="checkbox10"></label>
+          </div>
         </div>
       </div>
       <div class="zone3">
-        <h2>Zona 3</h2>
-        <p>Conteúdo da Zona 3</p>
+          <p>Verificar no inicio de cada produção após mudança de produto e após intervenção técnica (Manutenção, processo) ou problema de qualidade).</p>
+        <div class="checkbox-row">
+          <input type="checkbox" id="checkbox1"><label for="checkbox1"></label>
+        <input type="checkbox" id="checkbox2"><label for="checkbox2"></label>
+        <input type="checkbox" id="checkbox3"><label for="checkbox1"></label>
+        <input type="checkbox" id="checkbox4"><label for="checkbox4"></label>
+        <input type="checkbox" id="checkbox5"><label for="checkbox5"></label>
+        <input type="checkbox" id="checkbox6"><label for="checkbox6"></label>
+          </div>
+        <div class="checkbox-row">
+         <input type="checkbox" id="checkbox7"><label for="checkbox7"></label>
+        <input type="checkbox" id="checkbox8"><label for="checkbox8"></label>
+        <input type="checkbox" id="checkbox9"><label for="checkbox9"></label>
+        <input type="checkbox" id="checkbox10"><label for="checkbox10"></label>
+        <input type="checkbox" id="checkbox11"><label for="checkbox11"></label>
+        <input type="checkbox" id="checkbox12"><label for="checkbox12"></label>
+          </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="checkbox13"><label for="checkbox13"></label>
+        <input type="checkbox" id="checkbox14"><label for="checkbox14"></label>
+        <input type="checkbox" id="checkbox15"><label for="checkbox15"></label>
+        <input type="checkbox" id="checkbox16"><label for="checkbox16"></label>
+        <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
+        <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
+          </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
+        <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
+        <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
+        <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
+        <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
+        <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
+          </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="checkbox25"><label for="checkbox25"></label>
+        <input type="checkbox" id="checkbox26"><label for="checkbox26"></label>
+        <input type="checkbox" id="checkbox27"><label for="checkbox27"></label>
+        <input type="checkbox" id="checkbox28"><label for="checkbox28"></label>
+        <input type="checkbox" id="checkbox29"><label for="checkbox29"></label>
+        <input type="checkbox" id="checkbox30"><label for="checkbox30"></label>
+          </div>
+
       </div>
     </div>
   </body>

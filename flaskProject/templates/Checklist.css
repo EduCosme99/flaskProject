@@ -13,8 +13,7 @@ header {
 /* Define o estilo da classe content, que contém as três zonas */
 .content {
   display: grid;
-  /*grid-template-columns: 1fr 1fr 1fr;*/
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.3fr 1fr;
   grid-template-rows: 50% calc(100% - 100px) 1fr;
   height: calc(100vh - 80px); /* Ajusta a altura para que a altura da página seja usada, menos a altura do cabeçalho */
   grid-gap: 20px;
@@ -26,6 +25,9 @@ header {
   padding: 10px;
   grid-column: 1 / 2;
   grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* Define o estilo da classe zone2 */
@@ -33,7 +35,9 @@ header {
   background-color: #e6e6e6;
   padding: 10px;
   grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px 20px;
 }
 
 /* Define o estilo da classe zone3 */
@@ -47,8 +51,32 @@ header {
 .checkboxes {
   display: grid;
   grid-template-rows: repeat(2, auto);
-  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
 }
+
+.checkboxes input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+button {
+  width: 200px;
+  background-color: lightgray; /* cor de fundo do botão */
+  border-radius: 30px; /* bordas arredondadas do botão */
+  color: white; /* cor do texto */
+  padding: 10px 20px; /* espaço interno do botão */
+  border: none; /* remove a borda */
+  text-align: center; /* centraliza o texto */
+  text-decoration: none; /* remove sublinhado do texto */
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 
 /*
 .content {
