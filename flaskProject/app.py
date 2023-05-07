@@ -79,12 +79,12 @@ def pag_inicial():
     return render_template('PagInicial.html')
 
 
-@app.route('/geral')
+@app.route('/login_geral')
 def login_geral():
     return render_template('LoginGeral.html')
 
 
-@app.route('/supervisores')
+@app.route('/login_supervisores')
 def login_supervisores():
     return render_template('LoginSupervisores.html')
 
@@ -92,11 +92,6 @@ def login_supervisores():
 @app.route('/paginasupervisores')
 def pagina_supervisores():
     return render_template('PagGeralSupervisores.html')
-
-
-@app.route('/paginafuncionarios')
-def pagina_funcionarios():
-    return render_template('PagGeralFuncionarios.html')
 
 
 @app.route('/checklists')
@@ -107,6 +102,11 @@ def checklists():
 @app.route('/listafuncionarios')
 def lista_funcionarios():
     return render_template('ListaFuncionarios.html')
+
+
+@app.route('/supervisor')
+def supervisor():
+    return render_template('Supervisores.html')
 
 
 if __name__ == '__main__':
