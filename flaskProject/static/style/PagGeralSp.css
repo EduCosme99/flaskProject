@@ -1,6 +1,6 @@
 .container {
 	display: grid;
-	margin-top: 10vh;
+	margin-top: 2.5vh;
 	grid-template-columns: 0.5fr 1.9fr 0.8fr 0.8fr;
 	grid-template-rows: 0.5fr 2fr 1.2fr 0.3fr;
 	grid-template-areas: "cabeçalho cabeçalho cabeçalho cabeçalho"
@@ -13,6 +13,10 @@
 	text-align: center;**/
 }
 
+h2 {
+	margin-bottom: 10px;
+}
+
 .cabeçalho {
 	display: flex;
 	justify-content: space-between;
@@ -21,6 +25,7 @@
 }
 
 .checklists {
+	padding: 20px;
 	grid-area: checklists;
 	background-color: white;
 	border: 2px solid black;
@@ -33,17 +38,6 @@
 	overflow: auto;
 }
 
-#funcionarios {
-	background-color: white;
-	border: 2px solid black;
-	text-align: center;
-	font-size:25px;
-	display: flex;
-	flex-direction: column;
-	margin: 10px;
-	overflow: auto
-}
-
 #turnos {
 	background-color: white;
 	grid-area: turnos;
@@ -52,8 +46,24 @@
 	font-size:25px;
 	display: flex;
 	flex-direction: column;
-	margin: 10px;
-	overflow: auto
+	overflow: auto;
+	top: 25.5vh;
+	position: absolute;
+	left: 70%;
+}
+
+#funcionarios {
+	background-color: white;
+	grid-area: turnos;
+	border: 2px solid black;
+	text-align: center;
+	font-size:25px;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	top: 35.5vh;
+	position: absolute;
+	left: 70%;
 }
 
 #data {
@@ -158,6 +168,3 @@ input[type=checkbox]:checked + label:after {
   background-color: #FFA500;
   color: white;
 }
-
-
-
