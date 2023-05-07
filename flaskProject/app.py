@@ -99,7 +99,7 @@ def checklists():
     return render_template('Checklist.html')
 
 
-@app.route('/listafuncionarios')
+@app.route('/lista_funcionarios')
 def lista_funcionarios():
     return render_template('ListaFuncionarios.html')
 
