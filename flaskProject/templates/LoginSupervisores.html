@@ -26,10 +26,23 @@
   <body>
     <img src="/static/images/logo.png" id="logo">
     <h1>LOGIN SUPERVISORES</h1>
-    <input type="email" class="btn" placeholder="Email"></input>
-    <input type="password" class="btn" placeholder="Password"></input>
-    <div class="login_button">
-        <button class="small_btn" onclick="location.href='/supervisor'">Login</button>
+    <form method="POST" action="{{ url_for('login_supervisores') }}">
+        <input type="email" name="email" class="btn" placeholder="Email" required></input>
+        <input type="password" name="password" class="btn" placeholder="Password" required></input>
+        <div class="login_button">
+            <button class="small_btn">Login</button>
+        </div>
+    </form>
+    <div class="error-message">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
     </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -79,19 +79,35 @@ def pag_inicial():
     return render_template('PagInicial.html')
 
 
-@app.route('/login_geral')
+@app.route('/login_geral', methods=['GET', 'POST'])
 def login_geral():
+    if request.method == 'POST':
+        password = request.form['password']
+
+        funcionario = Funcionario.query.filter_by(password=password).first()
+
+        if funcionario:
+            return redirect(url_for('checklists'))
+        else:
+            flash('Credenciais inválidas. Tente novamente', 'error')
+
     return render_template('LoginGeral.html')
 
 
-@app.route('/login_supervisores')
+@app.route('/login_supervisores', methods=['GET', 'POST'])
 def login_supervisores():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        funcionario = Funcionario.query.filter_by(email=email, password=password).first()
+
+        if funcionario:
+            return redirect(url_for('supervisor'))
+        else:
+            flash('Credenciais inválidas. Tente novamente', 'error')
+
     return render_template('LoginSupervisores.html')
-
-
-@app.route('/paginasupervisores')
-def pagina_supervisores():
-    return render_template('PagGeralSupervisores.html')
 
 
 @app.route('/checklists')
