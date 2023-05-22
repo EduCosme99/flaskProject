@@ -129,6 +129,11 @@ def lista_funcionarios():
     return render_template('ListaFuncionarios.html', funcionarios=funcionarios)
 
 
+@app.route('/lista_parametros')
+def lista_parametros():
+    return render_template('ListaParametros.html')
+
+
 @app.route('/supervisor')
 def supervisor():
     turno_atual = get_turno_atual()
