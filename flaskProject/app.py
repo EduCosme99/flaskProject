@@ -125,13 +125,15 @@ def checklists():
 
 @app.route('/lista_funcionarios')
 def lista_funcionarios():
-    return render_template('ListaFuncionarios.html')
+    funcionarios = Funcionario.query.all()
+    return render_template('ListaFuncionarios.html', funcionarios=funcionarios)
 
 
 @app.route('/supervisor')
 def supervisor():
     turno_atual = get_turno_atual()
-    return render_template('Supervisores.html', turno_atual=turno_atual)
+    funcionarios = Funcionario.query.all()
+    return render_template('Supervisores.html', turno_atual=turno_atual, funcionarios=funcionarios)
 
 
 if __name__ == '__main__':
