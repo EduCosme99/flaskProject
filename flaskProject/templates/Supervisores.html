@@ -63,10 +63,15 @@
                 </div>
             </div>
         </div>
-        <div id="turnos">
+        <div id="turnos" style="margin-bottom: 20px">
             <h2>TURNOS</h2>
+            {% if turno_atual %}
+                <p>Horário do Turno Atual: {{ turno_atual.inicio_turno.strftime('%H:%M') }} - {{ turno_atual.fim_turno.strftime('%H:%M') }}</p>
+            {% else %}
+                <p>Nenhum turno a trabalhar</p>
+            {% endif %}
         </div>
-        <div id="funcionarios">
+        <div id="funcionarios" style="margin-top: 20px">
             <h2>FUNCIONARIOS</h2>
         </div>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">

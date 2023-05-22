@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///continental.db'
@@ -73,6 +74,13 @@ class Turno(db.Model):
 with app.app_context():
     db.create_all()
 
+
+def get_turno_atual():
+    now = datetime.now()
+    turno_atual = Turno.query.filter(Turno.inicio_turno <= now, Turno.fim_turno >= now).first()
+    return turno_atual
+
+
 @app.route('/')
 @app.route('/login')
 def pag_inicial():
@@ -122,7 +130,8 @@ def lista_funcionarios():
 
 @app.route('/supervisor')
 def supervisor():
-    return render_template('Supervisores.html')
+    turno_atual = get_turno_atual()
+    return render_template('Supervisores.html', turno_atual=turno_atual)
 
 
 if __name__ == '__main__':
