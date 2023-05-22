@@ -81,6 +81,14 @@ def get_turno_atual():
     return turno_atual
 
 
+@app.route('/excluir_parametro/<int:parametro_id>', methods=['POST'])
+def excluir_parametro(parametro_id):
+    parametro = Parametro.query.get_or_404(parametro_id)
+    db.session.delete(parametro)
+    db.session.commit()
+    return redirect(url_for('lista_parametros'))
+
+
 @app.route('/')
 @app.route('/login')
 def pag_inicial():
@@ -131,7 +139,8 @@ def lista_funcionarios():
 
 @app.route('/lista_parametros')
 def lista_parametros():
-    return render_template('ListaParametros.html')
+    parametros = Parametro.query.all()
+    return render_template('ListaParametros.html', parametros=parametros)
 
 
 @app.route('/supervisor')

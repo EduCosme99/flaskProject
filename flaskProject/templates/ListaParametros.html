@@ -22,6 +22,13 @@
             th {
                 background-color: #f2f2f2;
             }
+            .eliminar-column {
+                width: 10px;
+            }
+            .eliminar-button {
+                color: red;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -50,6 +57,26 @@
                 </div>
             </div>
         </nav>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th class="eliminar-column">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parametro in parametros %}
+                    <tr>
+                        <td>{{ parametro.id }}</td>
+                        <td>{{ parametro.descricao }}</td>
+                        <td class="eliminar-column">
+                            <span class="eliminar-button" onclick="excluirParametro({{ parametro.id }})">X</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
             <span id="date"></span> - <span id="time"></span>
         </div>
@@ -73,6 +100,26 @@
             }
 
             setInterval(updateTime, 1000);
+        </script>
+        <script>
+        function excluirParametro(parametroId) {
+            if (confirm("Tem certeza que deseja excluir este parâmetro?")) {
+                fetch('/excluir_parametro/' + parametroId, {
+                    method: 'POST'
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert("Erro ao excluir o parâmetro. Por favor, tente novamente.");
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                    alert("Erro ao excluir o parâmetro. Por favor, tente novamente.");
+                });
+            }
+        }
         </script>
     </body>
 </html>
