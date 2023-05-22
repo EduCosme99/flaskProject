@@ -114,7 +114,6 @@
             setInterval(updateTime, 1000);
         </script>
         <script>
-            // Função para atualizar o estado das checkboxes
             function updateChecklistState() {
                 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
                 checkboxes.forEach((checkbox) => {
@@ -124,7 +123,6 @@
                 });
             }
 
-            // Função para salvar o estado das checkboxes no localStorage
             function saveChecklistState() {
                 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
                 checkboxes.forEach((checkbox) => {
@@ -134,12 +132,10 @@
                 });
             }
 
-            // Event listener para atualizar o estado das checkboxes quando a página for carregada
             window.addEventListener("DOMContentLoaded", () => {
                 updateChecklistState();
             });
 
-            // Event listener para salvar o estado das checkboxes quando houver mudanças
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach((checkbox) => {
                 checkbox.addEventListener("change", () => {
