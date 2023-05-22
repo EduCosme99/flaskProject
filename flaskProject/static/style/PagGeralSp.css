@@ -8,9 +8,6 @@
 						 "checklits checklists funcionarios funcionarios"
 						 "data data data data";
 	grid-gap:1.5em;
-	//*font-size:25px;
-	font-family:Aileron, Aileron-Black;
-	text-align: center;**/
 }
 
 h2 {
@@ -39,6 +36,7 @@ h2 {
 }
 
 #turnos {
+	padding: 25px;
 	background-color: white;
 	grid-area: turnos;
 	border: 2px solid black;
@@ -47,12 +45,13 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
-	top: 25.5vh;
+	top: 18vh;
 	position: absolute;
-	left: 70%;
+	left: 65%;
 }
 
 #funcionarios {
+	padding: 25px;
 	background-color: white;
 	grid-area: turnos;
 	border: 2px solid black;
@@ -61,31 +60,15 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
-	top: 35.5vh;
+	top: 40.5vh;
 	position: absolute;
-	left: 70%;
+	left: 65%;
 }
 
 #data {
 	background-color: aliceblue;
 	grid-area: data;
 }
-
- /*.botao-checklist {
-	width: 95%;
-	height: 95%;
-	display: block;
-	margin: 5px 0;
-	padding: 15px;
-	border: none;
-	border-radius: 5px;
-	background-color: lightgrey;
-	color: white;
-	font-size: 16px;
-	cursor: pointer;
-	outline: none;
-	margin: 10px;*
-}*/
 
 .botao-checklist:hover {
 	background-color: #FFA500;
@@ -143,13 +126,6 @@ input[type=checkbox]:checked + label:after {
 	  text-align: center;
 	  line-height: 40px;
 }
-/*
-#botao-turnos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}*/
 
 .botao-turno {
   width: 100%;

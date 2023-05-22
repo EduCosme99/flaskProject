@@ -6,6 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
         <title>Continental</title>
+        <style>
+            .funcionarios-list .funcionario-item.red {
+                color: red;
+            }
+            .funcionarios-list .funcionario-item.black {
+                color: black;
+            }
+        </style>
         <link rel="stylesheet" href="/static/style/navigation_bar.css">
         <link rel="stylesheet" href="/static/style/PagGeralSp.css">
         <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
@@ -13,12 +21,12 @@
     <body>
         <nav>
             <div class="nav-bar">
-                <a class="logotipo" href="#">
+                <a class="logotipo" href="/supervisor">
                     <img src="/static/images/logo.png" alt="Continental" class="logo">
                 </a>
                 <div class="menu">
                     <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="/supervisor">Home</a></li>
                         <li><a href="#">Checklists</a></li>
                         <li><a href="/lista_funcionarios">Funcionários</a></li>
                         <li><a href="#">Parâmetros</a></li>
@@ -63,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div id="turnos" style="margin-bottom: 20px">
+        <div id="turnos">
             <h2>TURNOS</h2>
             {% if turno_atual %}
                 <p>Horário do Turno Atual: {{ turno_atual.inicio_turno.strftime('%H:%M') }} - {{ turno_atual.fim_turno.strftime('%H:%M') }}</p>
@@ -71,8 +79,8 @@
                 <p>Nenhum turno a trabalhar</p>
             {% endif %}
         </div>
-        <div id="funcionarios" style="margin-top: 20px">
-            <h2>FUNCIONARIOS</h2>
+        <div id="funcionarios">
+            <h2>FUNCIONÁRIOS</h2>
             <ul class="funcionarios-list">
                 {% for funcionario in funcionarios %}
                     <li class="funcionario-item {% if funcionario.id_cargo == 1 %}red{% elif funcionario.id_cargo == 2 %}black{% endif %}">
@@ -104,6 +112,40 @@
             }
 
             setInterval(updateTime, 1000);
+        </script>
+        <script>
+            // Função para atualizar o estado das checkboxes
+            function updateChecklistState() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach((checkbox) => {
+                    const checkboxId = checkbox.id;
+                    const isChecked = localStorage.getItem(checkboxId) === "true";
+                    checkbox.checked = isChecked;
+                });
+            }
+
+            // Função para salvar o estado das checkboxes no localStorage
+            function saveChecklistState() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach((checkbox) => {
+                    const checkboxId = checkbox.id;
+                    const isChecked = checkbox.checked;
+                    localStorage.setItem(checkboxId, isChecked);
+                });
+            }
+
+            // Event listener para atualizar o estado das checkboxes quando a página for carregada
+            window.addEventListener("DOMContentLoaded", () => {
+                updateChecklistState();
+            });
+
+            // Event listener para salvar o estado das checkboxes quando houver mudanças
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener("change", () => {
+                    saveChecklistState();
+                });
+            });
         </script>
     </body>
 </html>
