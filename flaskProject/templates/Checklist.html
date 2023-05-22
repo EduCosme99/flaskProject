@@ -5,39 +5,43 @@
     <title>Minha Página com Grids</title>
     <style>
       body {
-        margin: 0;
-        padding: 0;
+          font-size: 16px;
+          color: #333;
+          margin: 0;
+          padding: 0;
       }
-
       header {
-        height: 80px;
-        background-color: #333;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+          height: 80px;
+          background-color: #cccccc;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
       }
-
       .content {
-        display: grid;
-        grid-template-columns: 1fr 0.3fr 1fr;
-        grid-template-rows: 1fr;
-        height: calc(100vh - 80px);
-        align-items: stretch;
+          display: grid;
+          grid-template-columns: 1fr 0.3fr 1fr;
+          grid-template-rows: 50% calc(100% - 100px) 1fr;
+          height: calc(100vh - 80px);
+          align-items: stretch;
+          grid-gap: 20px;
       }
-
       .zone1 {
-        background-color: #f2f2f2;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
+          background-color: #f2f2f2;
+          padding: 10px;
+          grid-column: 1 / 2;
+          grid-row: 1 / 4;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
       }
-
       .zone2 {
-        background-color: #e6e6e6;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-        display: flex;
-        flex-direction: column;
+          background-color: #e6e6e6;
+          padding: 10px;
+          grid-column: 2 / 3;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px 20px;
       }
       .zone2 .checkboxes {
         display: flex;
@@ -45,25 +49,47 @@
         gap: 8px;
         margin-top: 16px;
       }
-
       .zone2 .checkboxes > div {
         display: flex;
         flex-direction: row;
         gap: 8px;
       }
-
       .zone2 .checkboxes input[type="checkbox"] {
         display: inline-block;
         margin: 0;
         width: auto;
       }
-
       .zone3 {
         background-color: #d9d9d9;
         grid-column: 3 / 4;
         grid-row: 1 / 2;
       }
-
+      .checkboxes {
+          display: grid;
+          grid-template-rows: repeat(2, auto);
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 16px;
+      }
+      .checkboxes input[type="checkbox"] {
+          margin-right: 5px;
+      }
+      .checkbox-row {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+      }
+      button {
+          width: 200px;
+          background-color: lightgray; /* cor de fundo do botão */
+          border-radius: 30px; /* bordas arredondadas do botão */
+          color: white; /* cor do texto */
+          padding: 10px 20px; /* espaço interno do botão */
+          border: none; /* remove a borda */
+          text-align: center; /* centraliza o texto */
+          text-decoration: none; /* remove sublinhado do texto */
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
     </style>
       <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
   </head>
