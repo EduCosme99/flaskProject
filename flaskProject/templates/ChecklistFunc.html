@@ -1,186 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Minha Página com Grids</title>
-    <style>
-      body {
-        font-size: 16px;
-        color: #333;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-          height: 80px;
-          background-color: #cccccc;
-          color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-
-      .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-        padding: 20px;
-      }
-      .zone2 {
-        background-color: #e6e6e6;
-        padding: 10px;
-      }
-      .checkbox-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .checkbox-group {
-        display: flex;
-        gap: 8px;
-      }
-      .checkboxes input[type="checkbox"] {
-        display: inline-block;
-        margin: 0;
-        width: auto;
-      }
-      button {
-        width: 200px;
-        background-color: lightgray;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        text-align: center;
-        text-decoration: none;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-      <header>
-      <h1>Checklist</h1>
-    </header>
-    <div class="content">
-      <div class="zone2">
-        <div class="checkbox-row">
-          <span>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox1"><label for="checkbox1"></label>
-            <input type="checkbox" id="checkbox2"><label for="checkbox2"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox3"><label for="checkbox3"></label>
-            <input type="checkbox" id="checkbox4"><label for="checkbox4"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox5"><label for="checkbox5"></label>
-            <input type="checkbox" id="checkbox6"><label for="checkbox6"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox7"><label for="checkbox7"></label>
-            <input type="checkbox" id="checkbox8"><label for="checkbox8"></label>
-          </div>
-        </div>
-        <div class="checkbox-row">
-          <span>O modelo eléctrico está OK no EOL?</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox9"><label for="checkbox9"></label>
-            <input type="checkbox" id="checkbox10"><label for="checkbox10"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox11"><label for="checkbox11"></label>
-            <input type="checkbox" id="checkbox12"><label for="checkbox12"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox13"><label for="checkbox13"></label>
-            <input type="checkbox" id="checkbox14"><label for="checkbox14"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox15"><label for="checkbox15"></label>
-            <input type="checkbox" id="checkbox16"><label for="checkbox16"></label>
-          </div>
-        </div>
-        <div class="checkbox-row">
-          <span>O programa de soldadura é o correcto? Verificar lista programas.</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
-            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
-            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
-            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
-            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
-          </div>
-        </div>
-        <div class="checkbox-row">
-          <span>O programa do objectivo é o correcto? (Referência da antena)</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
-            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
-            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
-            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
-            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
-          </div>
-        </div>
-         <div class="checkbox-row">
-          <span>O status dos FDs são os correctos? (Verificar listagem de status).</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
-            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
-            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
-            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
-            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
-          </div>
-        </div>
-          <div class="checkbox-row">
-          <span>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd).</span>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
-            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
-            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
-            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
-            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button>Concluir</button>
-    <button>Reiniciar</button>
-  </body>
-</html>-->
 
 <!DOCTYPE html>
 <html>
@@ -202,17 +19,25 @@
     }
     .container {
       display: flex;
+      max-height: 100vh;
+      overflow-y: auto;
     }
     .zona1 {
       flex: 1;
       height: 500px;
-      background-color: lightblue;
+      background-color: white;
       padding: 20px;
+      margin-top: 40px;
+      margin-rigth: 40px;
     }
+    .zona1 span.item {
+      margin-bottom: 10px;
+    }
+
     .zona2 {
       flex: 1;
       height: 500px;
-      background-color: lightgreen;
+      background-color: white;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -224,7 +49,7 @@
     .zona1 span,
     .zona2 label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     .zona2 .checkbox-group {
       display: flex;
@@ -236,33 +61,40 @@
       align-items: center;
     }
     .zona2 .checkbox-group input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       margin-right: 5px;
+      margin-top: 4px;
     }
-    .vertical-line {
+    /*.vertical-line {
       position: absolute;
       top: 0;
       bottom: 0;
       left: 50%;
       border-right: 1px solid black;
-    }
-    button {
-      padding: 15px 15px;
-      width: 135px;
-      color: #1E1C1B;
+    }*/
+    .button {
+      padding: 10px 20px;
+      color: #000000;
       background: #FFA500;
       font-family: "Trebuchet MS", sans-serif;
       font-size: 14px;
-      border-radius: 50px;
-      border: 0px;
-      display: block;
+      border-radius: 5px;
+      border: none;
+      display: inline-block;
       text-align: center;
       user-select: none;
       cursor: pointer;
-      margin: 0 auto;
-      margin-top: 50px;
-      transition: box-shadow 0.15s, opacity 0.15s, font-weight 0.15s;
+      margin: 5px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: right;
+      margin-top: 0px;
+    }
+    .button:hover {
+      background: lightgrey;
     }
     .hora-campos {
       display: flex;
@@ -288,17 +120,6 @@
       border-bottom: 1px solid black;
       background-color: transparent;
     }
-
-
-    /*.vertical-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: calc(12.5% + 20px);
-      width: 1px;
-      background-color: black;
-      content: "";
-    }*/
   </style>
 </head>
   <body>
@@ -329,18 +150,20 @@
             </div>
         </nav>
     </header>
+ <div class="content">
+  <div class="content-wrapper">
   <div class="container">
-    <div class="zona1">
+      <div class="zona1">
       <h2>Operação de Verificação antes de iniciar produção:</h2>
-      <span>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
-      <span>O modelo eléctrico está OK no EOL?</span>
-      <span>O programa de soldadura é o correcto? Verificar lista programas</span>
-      <span>O programa do objectivo é o correcto (Referência da antena)?</span>
-      <span>O status dos FDs são os correctos? (Verificar listagem de status)</span>
-      <span>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
+      <span class="item">Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
+      <span class="item">O modelo eléctrico está OK no EOL?</span>
+      <span class="item">O programa de soldadura é o correcto? Verificar lista programas</span>
+      <span class="item">O programa do objectivo é o correcto (Referência da antena)?</span>
+      <span class="item">O status dos FDs são os correctos? (Verificar listagem de status)</span>
+      <span class="item">Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
     </div>
         <div class="zona2">
-      <p>Inicio do turno</p>
+      <p>Início do turno</p>
     <div class="hora-campos">
     <!-- Campos de hora -->
     <div class="hora-item">
@@ -509,9 +332,12 @@
         </label>
       </div>
     </div>
+    </div>
+    <div class="button-container">
+      <button class="button">Observações</button>
+      <button class="button">Operação de Verificação após iniciar produção</button>
+    </div>
   </div>
-  <button>Observações</button>
-  <button>Operação de Verificação após iniciar produção</button>
 </body>
 </html>
 
