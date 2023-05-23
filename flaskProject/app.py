@@ -160,5 +160,15 @@ def adicionar_funcionario():
     return render_template('AdicionarFuncionario.html')
 
 
+@app.route('/adicionar_supervisor')
+def adicionar_supervisor():
+    return render_template('AdicionarSupervisor.html')
+
+
+@app.route('/adicionar_operadorvq')
+def adicionar_operadorvq():
+    return render_template('AdicionarOperadorVQ.html')
+
+
 if __name__ == '__main__':
     app.run()

@@ -71,7 +71,11 @@
                 {% endfor %}
             </tbody>
         </table>
-        <button class="small_btn" onclick="location.href='/adicionar_funcionario'">Adicionar</button>
+        <div style="display: flex">
+            <button class="small_btn" onclick="location.href='/adicionar_supervisor'">Adicionar Supervisor</button>
+            <button class="small_btn" onclick="location.href='/adicionar_operadorvq'">Adicionar Operador VQ</button>
+            <button class="small_btn" onclick="location.href='/adicionar_funcionario'">Adicionar Funcionário</button>
+        </div>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
             <span id="date"></span> - <span id="time"></span>
         </div>

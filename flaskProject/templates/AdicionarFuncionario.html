@@ -5,9 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
-        <title>Lista de Funcionários</title>
+        <title>Adicionar Funcionário</title>
         <link rel="stylesheet" href="/static/style/navigation_bar.css">
         <link rel="stylesheet" href="/static/style/button.css">
+        <link rel="stylesheet" href="/static/style/adicionar.css">
         <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
         <style>
             table {
@@ -33,26 +34,62 @@
                 </a>
             </div>
         </nav>
+        <section class="container">
+            <header style="font-weight: bold">Registar Funcionário</header>
+            <form action="#" class="form">
+                <div class="input-box">
+                    <label>Nome</label>
+                    <input type="text" placeholder="Introduza o nome" required/>
+                </div>
+
+                <div class="input-box">
+                    <label>Email</label>
+                    <input type="text" placeholder="Introduza o email" required/>
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <label>Telemóvel</label>
+                        <input type="text" placeholder="Introduza o nº telemóvel" required/>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Data de Nascimento</label>
+                        <input type="text" placeholder="Introduza a data de nascimento" required/>
+                    </div>
+                </div>
+
+                <div class="type-box">
+                    <h3>Tipo de Funcionário</h3>
+                    <div class="type-option">
+                        <div class="type">
+                            <input type="radio" id="check-supervisor" name="type" checked/>
+                            <label for="check-supervisor">Supervisor</label>
+                        </div>
+                        <div class="type">
+                            <input type="radio" id="check-vq" name="type" />
+                            <label for="check-vq">Operador VQ</label>
+                        </div>
+                        <div class="type">
+                            <input type="radio" id="check-funcionario" name="type" />
+                            <label for="check-funcionario">Funcionário</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="small_btn">Registar</button>
+            </form>
+        </section>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
             <span id="date"></span> - <span id="time"></span>
         </div>
         <script>
-            const body = document.querySelector("body"),
-                nav = document.querySelector("nav"),
-                searchToggle = document.querySelector(".searchToogle"),
-                dateElem = document.querySelector("#date"),
-                timeElem = document.querySelector("#time");
-
-            searchToggle.addEventListener("click", () => {
-                searchToggle.classList.toggle("active");
-            });
-
             function updateTime() {
                 const now = new Date();
                 const date = now.toLocaleDateString();
                 const time = now.toLocaleTimeString();
-                dateElem.textContent = date;
-                timeElem.textContent = time;
+                document.getElementById("date").textContent = date;
+                document.getElementById("time").textContent = time;
             }
 
             setInterval(updateTime, 1000);
