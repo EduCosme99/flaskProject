@@ -205,13 +205,21 @@
     }
     .zona1 {
       flex: 1;
+      height: 500px;
       background-color: lightblue;
       padding: 20px;
     }
     .zona2 {
       flex: 1;
+      height: 500px;
       background-color: lightgreen;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .zona2 p {
+      margin-bottom: 20px;
     }
     .zona1 span,
     .zona2 label {
@@ -256,6 +264,32 @@
       margin-top: 50px;
       transition: box-shadow 0.15s, opacity 0.15s, font-weight 0.15s;
     }
+    .hora-campos {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .hora-item {
+      display: flex;
+      align-items: center;
+      margin-right: 100px;
+    }
+
+    .hora-item label {
+      margin-right: 5px;
+    }
+
+    .hora-item input {
+      width: 50px;
+      padding: 5px;
+      border: none;
+      border-bottom: 1px solid black;
+      background-color: transparent;
+    }
+
+
     /*.vertical-line {
       position: absolute;
       top: 0;
@@ -305,8 +339,29 @@
       <span>O status dos FDs são os correctos? (Verificar listagem de status)</span>
       <span>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
     </div>
-    <div class="zona2">
-      <h2>Zona 2</h2>
+        <div class="zona2">
+      <p>Inicio do turno</p>
+    <div class="hora-campos">
+    <!-- Campos de hora -->
+    <div class="hora-item">
+      <label for="hora1">Hora:</label>
+      <input type="text" id="hora1" name="hora1" placeholder="__:__">
+    </div>
+    <div class="hora-item">
+      <label for="hora2">Hora:</label>
+      <input type="text" id="hora2" name="hora2" placeholder="__:__">
+    </div>
+        <div class="hora-campos">
+    <div class="hora-item">
+      <label for="hora1">Hora:</label>
+      <input type="text" id="hora1" name="hora1" placeholder="__:__">
+    </div>
+    <div class="hora-item">
+      <label for="hora2">Hora:</label>
+      <input type="text" id="hora2" name="hora2" placeholder="__:__">
+    </div>
+  </div>
+  </div>
       <div class="checkbox-group">
         <label for="checkbox1">
           <input type="checkbox" id="checkbox1">
@@ -459,6 +514,5 @@
   <button>Operação de Verificação após iniciar produção</button>
 </body>
 </html>
-
 
 
