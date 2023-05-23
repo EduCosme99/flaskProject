@@ -155,5 +155,10 @@ def funcionario():
     return render_template('ChecklistFunc.html')
 
 
+@app.route('/adicionar_funcionario')
+def adicionar_funcionario():
+    return render_template('AdicionarFuncionario.html')
+
+
 if __name__ == '__main__':
     app.run()

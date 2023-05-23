@@ -27,51 +27,12 @@
     </head>
     <body>
         <nav>
-            <div class="nav-bar">
+            <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
                 <a class="logotipo" href="/supervisor">
                     <img src="/static/images/logo.png" alt="Continental" class="logo">
                 </a>
-                <div class="menu">
-                    <ul class="nav-links">
-                        <li><a href="/supervisor">Home</a></li>
-                        <li><a href="#">Checklists</a></li>
-                        <li><a href="/lista_funcionarios">Funcionários</a></li>
-                        <li><a href="/lista_parametros">Parâmetros</a></li>
-                    </ul>
-                </div>
-                <div class="searchBox">
-                    <div class="searchToogle">
-                        <i class="fa-solid fa-magnifying-glass search"></i>
-                        <i class="fa-solid fa-xmark cancel"></i>
-                    </div>
-                    <div class="search-field">
-                        <input type="text" placeholder="Pesquisar...">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                </div>
             </div>
         </nav>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Posto</th>
-                    <th>Linha</th>
-                    <th>Cargo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for funcionario in funcionarios %}
-                    <tr>
-                        <td>{{ funcionario.nome }}</td>
-                        <td>{{ funcionario.id_posto }}</td>
-                        <td>{{ funcionario.id_linha }}</td>
-                        <td>{{ funcionario.id_cargo }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <button class="small_btn" onclick="location.href='/adicionar_funcionario'">Adicionar</button>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
             <span id="date"></span> - <span id="time"></span>
         </div>
