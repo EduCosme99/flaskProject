@@ -150,5 +150,10 @@ def supervisor():
     return render_template('Supervisores.html', turno_atual=turno_atual, funcionarios=funcionarios)
 
 
+@app.route('/funcionario')
+def funcionario():
+    return render_template('ChecklistFunc.html')
+
+
 if __name__ == '__main__':
     app.run()
