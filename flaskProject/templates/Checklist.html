@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Minha Página com Grids</title>
     <style>
-      body {
+     body {
           font-size: 16px;
           color: #333;
           margin: 0;
@@ -64,6 +64,22 @@
         grid-column: 3 / 4;
         grid-row: 1 / 2;
       }
+     .zone3 .checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .zone3 .checkboxes > div {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      }
+      .zone3 .checkboxes input[type="checkbox"] {
+        display: inline-block;
+        margin: 0;
+        width: auto;
+      }
       .checkboxes {
           display: grid;
           grid-template-rows: repeat(2, auto);
@@ -81,15 +97,15 @@
       button {
           width: 200px;
           background-color: lightgray; /* cor de fundo do botão */
-          border-radius: 30px; /* bordas arredondadas do botão */
           color: white; /* cor do texto */
           padding: 10px 20px; /* espaço interno do botão */
           border: none; /* remove a borda */
           text-align: center; /* centraliza o texto */
-          text-decoration: none; /* remove sublinhado do texto */
+          text-decoration: none; /* remove sublinhado do texto
           margin-right: 10px;
           margin-bottom: 10px;
-        }
+          }
+
     </style>
       <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
   </head>
@@ -100,14 +116,14 @@
     <div class="content">
       <div class="zone1">
         <h2>Operação de Verificação antes de iniciar produção:</h2>
-        <p>______</p>
+
         <ul>
-          <button>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</button>
-      <button>O modelo eléctrico está OK no EOL?</button>
-      <button>O programa de soldadura é o correcto? Verificar lista programas</button>
-      <button>O programa do objectivo é o correcto (Referência da antena)?</button>
-      <button>O status dos FDs são os correctos? (Verificar listagem de status)</button>
-      <button>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</button>
+          <p>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</p>
+      <p>O modelo eléctrico está OK no EOL?</p>
+      <p>O programa de soldadura é o correcto? Verificar lista programas</p>
+      <p>O programa do objectivo é o correcto (Referência da antena)?</p>
+      <p>O status dos FDs são os correctos? (Verificar listagem de status)</p>
+      <p>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</p>
         </ul>
       </div>
         <div class="zone2">
@@ -139,6 +155,7 @@
       </div>
       <div class="zone3">
           <p>Verificar no inicio de cada produção após mudança de produto e após intervenção técnica (Manutenção, processo) ou problema de qualidade).</p>
+        <p>Hora:</p>
         <div class="checkbox-row">
           <input type="checkbox" id="checkbox1"><label for="checkbox1"></label>
         <input type="checkbox" id="checkbox2"><label for="checkbox2"></label>

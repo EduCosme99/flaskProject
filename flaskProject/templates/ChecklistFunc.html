@@ -1,0 +1,390 @@
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Minha Página com Grids</title>
+    <style>
+      body {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+          height: 80px;
+          background-color: #cccccc;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        padding: 20px;
+      }
+      .zone2 {
+        background-color: #e6e6e6;
+        padding: 10px;
+      }
+      .checkbox-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .checkbox-group {
+        display: flex;
+        gap: 8px;
+      }
+      .checkboxes input[type="checkbox"] {
+        display: inline-block;
+        margin: 0;
+        width: auto;
+      }
+      button {
+        width: 200px;
+        background-color: lightgray;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+      <header>
+      <h1>Checklist</h1>
+    </header>
+    <div class="content">
+      <div class="zone2">
+        <div class="checkbox-row">
+          <span>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox1"><label for="checkbox1"></label>
+            <input type="checkbox" id="checkbox2"><label for="checkbox2"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox3"><label for="checkbox3"></label>
+            <input type="checkbox" id="checkbox4"><label for="checkbox4"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox5"><label for="checkbox5"></label>
+            <input type="checkbox" id="checkbox6"><label for="checkbox6"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox7"><label for="checkbox7"></label>
+            <input type="checkbox" id="checkbox8"><label for="checkbox8"></label>
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <span>O modelo eléctrico está OK no EOL?</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox9"><label for="checkbox9"></label>
+            <input type="checkbox" id="checkbox10"><label for="checkbox10"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox11"><label for="checkbox11"></label>
+            <input type="checkbox" id="checkbox12"><label for="checkbox12"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox13"><label for="checkbox13"></label>
+            <input type="checkbox" id="checkbox14"><label for="checkbox14"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox15"><label for="checkbox15"></label>
+            <input type="checkbox" id="checkbox16"><label for="checkbox16"></label>
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <span>O programa de soldadura é o correcto? Verificar lista programas.</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
+            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
+            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
+            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
+            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <span>O programa do objectivo é o correcto? (Referência da antena)</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
+            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
+            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
+            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
+            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
+          </div>
+        </div>
+         <div class="checkbox-row">
+          <span>O status dos FDs são os correctos? (Verificar listagem de status).</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
+            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
+            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
+            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
+            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
+          </div>
+        </div>
+          <div class="checkbox-row">
+          <span>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd).</span>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox17"><label for="checkbox17"></label>
+            <input type="checkbox" id="checkbox18"><label for="checkbox18"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox19"><label for="checkbox19"></label>
+            <input type="checkbox" id="checkbox20"><label for="checkbox20"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox21"><label for="checkbox21"></label>
+            <input type="checkbox" id="checkbox22"><label for="checkbox22"></label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkbox23"><label for="checkbox23"></label>
+            <input type="checkbox" id="checkbox24"><label for="checkbox24"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button>Concluir</button>
+    <button>Reiniciar</button>
+  </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Página com Duas Divs</title>
+  <style>
+    .container {
+      display: flex;
+    }
+    .zona1 {
+      flex: 1;
+      background-color: lightblue;
+      padding: 20px;
+    }
+    .zona2 {
+      flex: 1;
+      background-color: lightgreen;
+      padding: 20px;
+    }
+    .zona1 span,
+    .zona2 label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .zona2 .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .zona2 .checkbox-group label {
+      flex-basis: 12.5%;
+      display: flex;
+      align-items: center;
+    }
+    .zona2 .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="zona1">
+      <h2>Zona 1</h2>
+      <span>Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
+      <span>O modelo eléctrico está OK no EOL?</span>
+      <span>O programa de soldadura é o correcto? Verificar lista programas</span>
+      <span>O programa do objectivo é o correcto (Referência da antena)?</span>
+      <span>O status dos FDs são os correctos? (Verificar listagem de status)</span>
+      <span>Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
+    </div>
+    <div class="zona2">
+      <h2>Zona 2</h2>
+      <div class="checkbox-group">
+        <label for="checkbox1">
+          <input type="checkbox" id="checkbox1">
+        </label>
+        <label for="checkbox2">
+          <input type="checkbox" id="checkbox2">
+        </label>
+        <label for="checkbox3">
+          <input type="checkbox" id="checkbox3">
+        </label>
+        <label for="checkbox4">
+          <input type="checkbox" id="checkbox4">
+        </label>
+        <label for="checkbox5">
+          <input type="checkbox" id="checkbox5">
+        </label>
+        <label for="checkbox6">
+          <input type="checkbox" id="checkbox6">
+        </label>
+        <label for="checkbox7">
+          <input type="checkbox" id="checkbox7">
+        </label>
+        <label for="checkbox8">
+          <input type="checkbox" id="checkbox8">
+        </label>
+        <label for="checkbox9">
+          <input type="checkbox" id="checkbox9">
+        </label>
+        <label for="checkbox10">
+          <input type="checkbox" id="checkbox10">
+        </label>
+        <label for="checkbox11">
+          <input type="checkbox" id="checkbox11">
+        </label>
+        <label for="checkbox12">
+          <input type="checkbox" id="checkbox12">
+        </label>
+        <label for="checkbox13">
+          <input type="checkbox" id="checkbox13">
+        </label>
+        <label for="checkbox14">
+          <input type="checkbox" id="checkbox14">
+        </label>
+        <label for="checkbox15">
+          <input type="checkbox" id="checkbox15">
+        </label>
+        <label for="checkbox16">
+          <input type="checkbox" id="checkbox16">
+        </label>
+        <label for="checkbox17">
+          <input type="checkbox" id="checkbox17">
+        </label>
+        <label for="checkbox18">
+          <input type="checkbox" id="checkbox18">
+        </label>
+        <label for="checkbox19">
+          <input type="checkbox" id="checkbox19">
+        </label>
+        <label for="checkbox20">
+          <input type="checkbox" id="checkbox20">
+        </label>
+        <label for="checkbox21">
+          <input type="checkbox" id="checkbox21">
+        </label>
+        <label for="checkbox22">
+          <input type="checkbox" id="checkbox22">
+        </label>
+        <label for="checkbox23">
+          <input type="checkbox" id="checkbox23">
+        </label>
+        <label for="checkbox24">
+          <input type="checkbox" id="checkbox24">
+        </label>
+        <label for="checkbox25">
+          <input type="checkbox" id="checkbox25">
+        </label>
+        <label for="checkbox26">
+          <input type="checkbox" id="checkbox26">
+        </label>
+        <label for="checkbox27">
+          <input type="checkbox" id="checkbox27">
+        </label>
+        <label for="checkbox28">
+          <input type="checkbox" id="checkbox28">
+        </label>
+        <label for="checkbox29">
+          <input type="checkbox" id="checkbox29">
+        </label>
+        <label for="checkbox30">
+          <input type="checkbox" id="checkbox30">
+        </label>
+        <label for="checkbox31">
+          <input type="checkbox" id="checkbox31">
+        </label>
+        <label for="checkbox32">
+          <input type="checkbox" id="checkbox32">
+        </label>
+        <label for="checkbox33">
+          <input type="checkbox" id="checkbox33">
+        </label>
+        <label for="checkbox34">
+          <input type="checkbox" id="checkbox34">
+        </label>
+        <label for="checkbox35">
+          <input type="checkbox" id="checkbox35">
+        </label>
+        <label for="checkbox36">
+          <input type="checkbox" id="checkbox36">
+        </label>
+        <label for="checkbox37">
+          <input type="checkbox" id="checkbox37">
+        </label>
+        <label for="checkbox38">
+          <input type="checkbox" id="checkbox38">
+        </label>
+        <label for="checkbox39">
+          <input type="checkbox" id="checkbox39">
+        </label>
+        <label for="checkbox40">
+          <input type="checkbox" id="checkbox40">
+        </label>
+        <label for="checkbox41">
+          <input type="checkbox" id="checkbox41">
+        </label>
+        <label for="checkbox42">
+          <input type="checkbox" id="checkbox42">
+        </label>
+        <label for="checkbox43">
+          <input type="checkbox" id="checkbox43">
+        </label>
+        <label for="checkbox44">
+          <input type="checkbox" id="checkbox44">
+        </label>
+        <label for="checkbox45">
+          <input type="checkbox" id="checkbox45">
+        </label>
+        <label for="checkbox46">
+          <input type="checkbox" id="checkbox46">
+        </label>
+        <label for="checkbox47">
+          <input type="checkbox" id="checkbox47">
+        </label>
+        <label for="checkbox48">
+          <input type="checkbox" id="checkbox48">
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
