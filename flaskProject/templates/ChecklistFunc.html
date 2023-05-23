@@ -69,13 +69,7 @@
       margin-right: 10px;
       margin-top: 15px;
     }
-    /*.vertical-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      border-right: 1px solid black;
-    }*/
+
     .button {
       padding: 10px 20px;
       color: #000000;
@@ -199,12 +193,12 @@
     </div>
         <div class="hora-campos">
     <div class="hora-item">
-      <label for="hora1">Hora:</label>
-      <input type="text" id="hora1" name="hora1" placeholder="__:__">
+      <label for="hora3">Hora:</label>
+      <input type="text" id="hora3" name="hora3" placeholder="__:__">
     </div>
     <div class="hora-item">
-      <label for="hora2">Hora:</label>
-      <input type="text" id="hora2" name="hora2" placeholder="__:__">
+      <label for="hora4">Hora:</label>
+      <input type="text" id="hora4" name="hora4" placeholder="__:__">
     </div>
   </div>
   </div>
@@ -529,7 +523,77 @@
       <button class="button">Operação de Verificação após iniciar produção</button>
     </div>
   </div>
-</body>
+    <script>
+
+      function restoreState() {
+        // Restaurar estado das checkboxes
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+          const checkboxId = checkbox.getAttribute('id');
+          const checkboxState = localStorage.getItem(checkboxId);
+
+          if (checkboxState === 'true') {
+            checkbox.checked = true;
+          }
+        });
+
+        // Restaurar estado das horas
+        const horaFields = document.querySelectorAll('.hora-field');
+        horaFields.forEach(function (field) {
+          const fieldId = field.getAttribute('id');
+          const fieldValue = localStorage.getItem(fieldId);
+
+          if (fieldValue) {
+            field.value = fieldValue;
+          }
+        });
+      }
+
+      // Função para salvar o estado das checkboxes e das horas
+      function saveState() {
+        // Salvar estado das checkboxes
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+          const checkboxId = checkbox.getAttribute('id');
+          const checkboxState = checkbox.checked;
+
+          localStorage.setItem(checkboxId, checkboxState);
+        });
+
+        // Salvar estado das horas
+        const horaFields = document.querySelectorAll('.hora-field');
+        horaFields.forEach(function (field) {
+          const fieldId = field.getAttribute('id');
+          const fieldValue = field.value;
+
+          localStorage.setItem(fieldId, fieldValue);
+        });
+      }
+
+      // Evento disparado quando uma checkbox é alterada
+      document.addEventListener('change', function (event) {
+        const target = event.target;
+
+        if (target.matches('.checkbox-group input[type="checkbox"]')) {
+          saveState();
+        }
+      });
+
+      // Evento disparado quando um campo de hora é alterado
+      document.addEventListener('input', function (event) {
+        const target = event.target;
+
+        if (target.matches('.hora-field')) {
+          saveState();
+        }
+      });
+
+      // Restaurar o estado das checkboxes e das horas ao carregar a página
+      document.addEventListener('DOMContentLoaded', function () {
+        restoreState();
+      });
+  </script>
+  </body>
 </html>
 
 
