@@ -22,8 +22,15 @@
             th {
                 background-color: #f2f2f2;
             }
+            .editar-column {
+                width: 10px;
+            }
             .eliminar-column {
                 width: 10px;
+            }
+            .editar-button {
+                color: #FFA500;
+                cursor: pointer;
             }
             .eliminar-button {
                 color: red;
@@ -62,6 +69,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Descrição</th>
+                    <th class="editar-column">Editar</th>
                     <th class="eliminar-column">Eliminar</th>
                 </tr>
             </thead>
@@ -70,6 +78,9 @@
                     <tr>
                         <td>{{ parametro.id }}</td>
                         <td>{{ parametro.descricao }}</td>
+                        <td class="editar-column">
+                            <span class="editar-button">!</span>
+                        </td>
                         <td class="eliminar-column">
                             <span class="eliminar-button" onclick="excluirParametro({{ parametro.id }})">X</span>
                         </td>
