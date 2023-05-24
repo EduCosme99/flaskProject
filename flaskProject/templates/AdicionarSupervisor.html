@@ -49,13 +49,53 @@
 
                 <div class="column">
                     <div class="input-box">
-                        <label>Telemóvel</label>
-                        <input type="text" placeholder="Introduza o nº telemóvel" required/>
+                        <label>Password</label>
+                        <input type="text" name="password"placeholder="Introduza a password" required/>
                     </div>
 
                     <div class="input-box">
-                        <label>Data de Nascimento</label>
-                        <input type="text" placeholder="Introduza a data de nascimento" required/>
+                        <label>Confirmar Password</label>
+                        <input type="password" name="confirmar_password"placeholder="Introduza novamente a password" required/>
+                        <div id="error-text" style="color: red; display: none;">As senhas não coincidem</div>
+                    </div>
+                    <!--<div id="error-text" style="color: red; display: none;">As senhas não coincidem</div>-->
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <label>Turno</label>
+                        <select name="turno" required>
+                            <option value="" disabled selected>Selecione o turno</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Linha</label>
+                            <select name="linha" required>
+                                <option value="" disabled selected>Selecione a linha</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Posto</label>
+                            <select name="posto" required>
+                                <option value="" disabled selected>Selecione o posto</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                     </div>
                 </div>
 
@@ -75,6 +115,24 @@
             }
 
             setInterval(updateTime, 1000);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const passwordInput = document.querySelector('input[name="password"]');
+                const confirmPasswordInput = document.querySelector('input[name="confirmar_password"]');
+                const errorText = document.getElementById('error-text');
+
+                function checkPasswordMatch() {
+                    const password = passwordInput.value;
+                    const confirmPassword = confirmPasswordInput.value;
+                    if (password !== confirmPassword) {
+                        errorText.style.display = 'block';
+                    } else {
+                        errorText.style.display = 'none';
+                    }
+                }
+
+                confirmPasswordInput.addEventListener('blur', checkPasswordMatch);
+            });
         </script>
     </body>
 </html>

@@ -75,6 +75,24 @@ body {
 .form :where(.type input, .type label) {
     cursor: pointer;
 }
+.form .input-box select {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 0 15px;
+    appearance: none;
+    background-size: 24px;
+}
+.form .input-box select:focus {
+    border-color: #FFA500;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+}
 
 /*Responsive*/
 @media screen and (max-width: 500px) {
