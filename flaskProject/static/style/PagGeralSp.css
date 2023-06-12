@@ -35,6 +35,25 @@ h2 {
 	overflow: auto;
 }
 
+.checklists::-webkit-scrollbar {
+  	width: 10px;
+}
+
+.checklists::-webkit-scrollbar-track {
+	border-radius: 5px;
+  	background: #FFFFFF;
+}
+
+.checklists::-webkit-scrollbar-thumb {
+  	background: #888;
+  	border-radius: 5px;
+	transition: background 0.5s ease-in-out;
+}
+
+.checklists::-webkit-scrollbar-thumb:hover {
+  	background: #555;
+}
+
 #turnos {
 	padding: 25px;
 	width: 350px;
@@ -64,6 +83,13 @@ h2 {
 	top: 40.5vh;
 	position: absolute;
 	left: 65%;
+}
+
+.checklists,
+#turnos,
+#funcionarios {
+  	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 #data {
