@@ -37,8 +37,8 @@ h2 {
 
 #turnos {
 	padding: 25px;
+	width: 350px;
 	background-color: white;
-	grid-area: turnos;
 	border: 2px solid black;
 	text-align: center;
 	font-size:25px;
@@ -52,8 +52,8 @@ h2 {
 
 #funcionarios {
 	padding: 25px;
+	width: 350px;
 	background-color: white;
-	grid-area: turnos;
 	border: 2px solid black;
 	text-align: center;
 	font-size:25px;
@@ -120,7 +120,7 @@ input[type=checkbox] + label:after {
 }
 
 input[type=checkbox]:checked + label:after {
-	  content: "\2713"; /* caractere de marca de seleção (check mark)*/
+	  content: "\2713";
 	  background-color: #FFA500;
 	  color: white;
 	  text-align: center;
