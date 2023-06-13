@@ -103,11 +103,6 @@ h2 {
 	grid-area: data;
 }
 
-.botao-checklist:hover {
-	background-color: #FFA500;
-	color: white;
-}
-
 .botao-checklist{
 	width: 95%;
 	height: 95%;
@@ -122,11 +117,13 @@ h2 {
 	cursor: pointer;
 	outline: none;
 	margin: 10px;
+	transition: background-color 0.3s ease-in-out;
 }
 
 .botao-checklist:hover {
 	background-color: #FFA500;
 	color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 input[type=checkbox] {
@@ -140,40 +137,43 @@ label {
 
 input[type=checkbox] + .botao-checklist {
 	margin-left: 10px;
+	transition: background-color 0.3s ease-in-out;
 }
 
 input[type=checkbox] + label:after {
-	  content: "";
-	  display: inline-block;
-	  width: 40px;
-	  height: 40px;
-	  border: 1px solid gray;
-	  margin-right: 10px;
-	  vertical-align: middle;
+	content: "";
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin-right: 10px;
+	vertical-align: middle;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 input[type=checkbox]:checked + label:after {
-	  content: "\2713";
-	  background-color: #FFA500;
-	  color: white;
-	  text-align: center;
-	  line-height: 40px;
+	content: "\2713";
+	background-color: #FFA500;
+	color: white;
+	text-align: center;
+	line-height: 40px;
 }
 
 .botao-turno {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: lightgrey;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  outline: none;
+  	width: 100%;
+  	padding: 10px;
+  	margin-bottom: 10px;
+  	background-color: lightgrey;
+  	color: white;
+  	font-size: 16px;
+  	border: none;
+  	border-radius: 5px;
+  	cursor: pointer;
+  	outline: none;
 }
 
 .botao-turno:hover {
-  background-color: #FFA500;
-  color: white;
+  	background-color: #FFA500;
+  	color: white;
 }
