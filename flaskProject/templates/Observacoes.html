@@ -11,73 +11,71 @@
     <link rel="stylesheet" href="/static/style/adicionar.css">
     <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      .button {
+      padding: 10px 20px;
+      color: #000000;
+      background: #FFA500;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
+      display: inline-block;
+      text-align: center;
+      user-select: none;
+      cursor: pointer;
+      margin: 5px;
+    }
 
-        .container {
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 75px;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
+    .button-container {
+      display: flex;
+      justify-content: right;
+      margin-top: 0px;
+    }
+    .button:hover {
+      background: lightgrey;
+    }
     </style>
 </head>
 <body>
-<nav>
-    <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
-        <a class="logotipo" href="/supervisor">
-            <img src="/static/images/logo.png" alt="Continental" class="logo">
-        </a>
-    </div>
-</nav>
-<section class="container">
-    <header style="font-weight: bold">Observações</header>
-    <form action="#" class="form">
-        <div class="input-box">
-            <label>Nome</label>
-            <input type="text" placeholder="Introduza a observação" required style="height: 100px;" />
+    <nav>
+        <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+            <a class="logotipo" href="/supervisor">
+                <img src="/static/images/logo.png" alt="Continental" class="logo">
+            </a>
         </div>
-        <div class="column">
-            <div class="input-box">
+    </nav>
+    <section class="container" style="display: flex; flex-direction: column; align-items: center;">
+        <header style="font-weight: bold; margin-bottom: 20px;">Observações</header>
+        <form action="#" class="form">
+            <div class="input-box" style="margin-bottom: 20px;">
                 <label>Parâmetro</label>
-                <select name="parametro" required>
-                    <option value="" disabled selected>Selecione o posto</option>
+                <select name="parametro" required style="height: 20px;">
+                    <option value="" disabled selected>Selecione o número do parâmetro</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                    <option value="6">1</option>
-                    <option value="7">2</option>
-                    <option value="8">3</option>
-                    <option value="9">4</option>
-                    <option value="10">5</option>
-                    <option value="11">1</option>
-                    <option value="12">2</option>
-                    <option value="13">3</option>
-                    <option value="14">4</option>
-                    <option value="15">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
                 </select>
             </div>
-        </div>
-    </form>
-</section>
+            <div class="input-box">
+                <input type="text" placeholder="Introduza a observação" required style="height: 300px; width: 600px; text-align: left; vertical-align: top; padding-left: 5px; padding-top: 5px;" />
+            </div>
+              <div class="button-container">
+      <button class="button">Checklist</button>
+      <button class="button">Validação</button>
+    </div>
+        </form>
+    </section>
 </body>
 </html>
