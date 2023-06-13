@@ -47,6 +47,11 @@ nav .nav-bar {
     display: flex;
     align-items: center;
     margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 .nav-bar .nav-links {
