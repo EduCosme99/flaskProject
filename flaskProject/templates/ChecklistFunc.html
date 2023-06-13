@@ -162,20 +162,20 @@
   <div class="container">
       <div class="zona1">
       <h2>Operação de Verificação antes de iniciar produção:</h2>
-      <span class="item">Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
-      <span class="item">O modelo eléctrico está OK no EOL?</span>
-      <span class="item">O programa de soldadura é o correcto? Verificar lista programas</span>
-      <span class="item">O programa do objectivo é o correcto (Referência da antena)?</span>
-      <span class="item">O status dos FDs são os correctos? (Verificar listagem de status)</span>
-      <span class="item">Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
-      <span class="item">Os Poka-Yoke detectam os modelos NOK?</span>
-      <span class="item">S IFCs estão visíveis e colocados ao longo do processo?</span>
-      <span class="item">As caixas para análise e refugo estão vazias?</span>
-      <span class="item">Os operadores cumprem as regras de proteção ESD?</span>
-      <span class="item">A linha está limpa (nas linhas com TPM verificar se o mesmo foi realizado no turno anterior), arrumada e as ferramentas estão limpas e em bom estado?</span>
-      <span class="item"> A contagem para proxima manutenção está dentro do prazo? Amarelo: avisar manutenção Vermelho:Parar produção</span>
-      <span class="item"> A data de verificação do Poka-Yoke está de acordo com a periodicidade definida? (segundo a lista de Poka-Yoke).</span>
-      <span class="item">Garantir que todos os equipamentos electrónicos (p.e: telemovéis) se encontram desligados ou em modo voo ( apenas aplicável a L27, L47 eL42).</span>
+      <span class="item">1.Os colaboradores estão aptos para as tarefas que vão executar (Verificar matriz de Polivalência e formação da linha - ILU)?</span>
+      <span class="item">2.O modelo eléctrico está OK no EOL?</span>
+      <span class="item">3.O programa de soldadura é o correcto? Verificar lista programas</span>
+      <span class="item">4.O programa do objectivo é o correcto (Referência da antena)?</span>
+      <span class="item">5.O status dos FDs são os correctos? (Verificar listagem de status)</span>
+      <span class="item">6.Verificar a data dos fd´s (a data de produção deverá corresponder à data constante no fd)</span>
+      <span class="item">7.Os Poka-Yoke detectam os modelos NOK?</span>
+      <span class="item">8.OS IFCs estão visíveis e colocados ao longo do processo?</span>
+      <span class="item">9.As caixas para análise e refugo estão vazias?</span>
+      <span class="item">10.Os operadores cumprem as regras de proteção ESD?</span>
+      <span class="item">11.A linha está limpa (nas linhas com TPM verificar se o mesmo foi realizado no turno anterior), arrumada e as ferramentas estão limpas e em bom estado?</span>
+      <span class="item">12.A contagem para proxima manutenção está dentro do prazo? Amarelo: avisar manutenção Vermelho:Parar produção</span>
+      <span class="item">13.A data de verificação do Poka-Yoke está de acordo com a periodicidade definida? (segundo a lista de Poka-Yoke).</span>
+      <span class="item">14.Garantir que todos os equipamentos electrónicos (p.e: telemovéis) se encontram desligados ou em modo voo ( apenas aplicável a L27, L47 eL42).</span>
       </div>
   <div class="zona2">
     <div class="descricao-campos">
@@ -184,21 +184,21 @@
     </div>
         <div class="hora-campos">
     <div class="hora-item">
-      <label for="hora1">Hora:</label>
-      <input type="text" id="hora1" name="hora1" placeholder="__:__">
+      <label for="h1">Hora:</label>
+      <input type="text" id="h1" name="h1" placeholder="__h__">
     </div>
     <div class="hora-item">
-      <label for="hora2">Hora:</label>
-      <input type="text" id="hora2" name="hora2" placeholder="__:__">
+      <label for="h2">Hora:</label>
+      <input type="text" id="h2" name="h2" placeholder="__h__">
     </div>
         <div class="hora-campos">
     <div class="hora-item">
-      <label for="hora3">Hora:</label>
-      <input type="text" id="hora3" name="hora3" placeholder="__:__">
+      <label for="h3">Hora:</label>
+      <input type="text" id="h3" name="h3" placeholder="__h__">
     </div>
     <div class="hora-item">
-      <label for="hora4">Hora:</label>
-      <input type="text" id="hora4" name="hora4" placeholder="__:__">
+      <label for="h4">Hora:</label>
+      <input type="text" id="h4" name="h4" placeholder="__h__">
     </div>
   </div>
   </div>
@@ -516,6 +516,7 @@
             <input type="checkbox" id="checkbox378">
           </label>
              </div>
+      </div>
           </div>
           </div>
     <div class="button-container">
@@ -549,49 +550,80 @@
         });
       }
 
-      // Função para salvar o estado das checkboxes e das horas
-      function saveState() {
-        // Salvar estado das checkboxes
-        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
-        checkboxes.forEach(function (checkbox) {
-          const checkboxId = checkbox.getAttribute('id');
-          const checkboxState = checkbox.checked;
+         // Função para restaurar o estado das checkboxes
+    function restoreCheckboxState() {
+      const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+      checkboxes.forEach(function (checkbox) {
+        const checkboxId = checkbox.getAttribute('id');
+        const savedState = localStorage.getItem(checkboxId);
 
-          localStorage.setItem(checkboxId, checkboxState);
-        });
+        if (savedState === 'true') {
+          checkbox.checked = true;
+        } else {
+          checkbox.checked = false;
+        }
+      });
+    }
 
-        // Salvar estado das horas
-        const horaFields = document.querySelectorAll('.hora-field');
-        horaFields.forEach(function (field) {
-          const fieldId = field.getAttribute('id');
-          const fieldValue = field.value;
+    // Função para restaurar o estado das horas
+    function restoreHoraState() {
+      const horaFields = document.querySelectorAll('.hora-field');
+      horaFields.forEach(function (field) {
+        const fieldId = field.getAttribute('id');
+        const savedValue = localStorage.getItem(fieldId);
 
-          localStorage.setItem(fieldId, fieldValue);
-        });
+        if (savedValue) {
+          field.value = savedValue;
+        }
+      });
+    }
+
+    // Função para salvar o estado das checkboxes
+    function saveState() {
+      const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+      checkboxes.forEach(function (checkbox) {
+        const checkboxId = checkbox.getAttribute('id');
+        const checkboxState = checkbox.checked;
+
+        localStorage.setItem(checkboxId, checkboxState);
+      });
+    }
+
+    // Função para salvar o estado das horas
+    function saveHoraState() {
+      const horaFields = document.querySelectorAll('.hora-field');
+      horaFields.forEach(function (field) {
+        const fieldId = field.getAttribute('id');
+        const fieldValue = field.value;
+
+        localStorage.setItem(fieldId, fieldValue);
+      });
+    }
+
+    // Evento disparado quando uma checkbox é alterada
+    document.addEventListener('change', function (event) {
+      const target = event.target;
+
+      if (target.matches('.checkbox-group input[type="checkbox"]')) {
+        saveState();
       }
+    });
 
-      // Evento disparado quando uma checkbox é alterada
-      document.addEventListener('change', function (event) {
-        const target = event.target;
+    // Evento disparado quando um campo de hora é alterado
+    document.addEventListener('input', function (event) {
+      const target = event.target;
 
-        if (target.matches('.checkbox-group input[type="checkbox"]')) {
-          saveState();
-        }
-      });
+      if (target.matches('.hora-field')) {
+        saveHoraState();
+      }
+    });
 
-      // Evento disparado quando um campo de hora é alterado
-      document.addEventListener('input', function (event) {
-        const target = event.target;
+    // Restaurar o estado das checkboxes e das horas ao carregar a página
+    document.addEventListener('DOMContentLoaded', function () {
+      restoreCheckboxState();
+      restoreHoraState();
+    });
 
-        if (target.matches('.hora-field')) {
-          saveState();
-        }
-      });
-
-      // Restaurar o estado das checkboxes e das horas ao carregar a página
-      document.addEventListener('DOMContentLoaded', function () {
-        restoreState();
-      });
   </script>
   </body>
 </html>
