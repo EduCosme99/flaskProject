@@ -126,8 +126,13 @@ def login_supervisores():
     return render_template('LoginSupervisores.html')
 
 
-@app.route('/checklists')
-def checklists():
+@app.route('/pre_checklist')
+def pre_checklist():
+    return render_template('ChecklistFunc.html')
+
+
+@app.route('/pos_checklist')
+def pos_checklist():
     return render_template('Checklist.html')
 
 
@@ -148,11 +153,6 @@ def supervisor():
     turno_atual = get_turno_atual()
     funcionarios = Funcionario.query.all()
     return render_template('Supervisores.html', turno_atual=turno_atual, funcionarios=funcionarios)
-
-
-@app.route('/funcionario')
-def funcionario():
-    return render_template('ChecklistFunc.html')
 
 
 @app.route('/adicionar_funcionario')
