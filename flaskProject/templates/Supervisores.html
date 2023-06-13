@@ -27,7 +27,7 @@
                 <div class="menu">
                     <ul class="nav-links">
                         <li><a href="/supervisor">Home</a></li>
-                        <li><a href="#">Checklists</a></li>
+                        <li><a href="#">Turnos</a></li>
                         <li><a href="/lista_funcionarios">Funcionários</a></li>
                         <li><a href="/lista_parametros">Parâmetros</a></li>
                     </ul>
@@ -79,16 +79,17 @@
                 <p>Nenhum turno a trabalhar</p>
             {% endif %}
         </div>
-        <div id="funcionarios">
-            <h2>FUNCIONÁRIOS</h2>
-            <ul class="funcionarios-list">
-                {% for funcionario in funcionarios %}
-                    <li class="funcionario-item {% if funcionario.id_cargo == 1 %}red{% elif funcionario.id_cargo == 2 %}black{% endif %}">
-                        {{ funcionario.nome }}
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+            <div id="funcionarios">
+                <h2>FUNCIONÁRIOS</h2>
+                <ul class="funcionarios-list">
+                    {% for funcionario in funcionarios %}
+                        <li class="funcionario-item {% if funcionario.id_cargo == 1 %}red{% elif funcionario.id_cargo == 2 %}black{% endif %}">
+                            {{ funcionario.nome }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </a>
         <div class="date-time" style="position: fixed; bottom: 0; right: 0; padding: 5px;">
             <span id="date"></span> - <span id="time"></span>
         </div>
