@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
     <title>Validação</title>
+    <link rel="stylesheet" href="/static/style/navigation_bar.css">
     <style>
         .container {
             display: flex;
@@ -14,18 +16,27 @@
         }
 
         .signature-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             margin-bottom: 20px;
         }
 
         .signature-box label {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-right: 10px;
         }
 
         .signature-box input {
             border: 1px solid #ccc;
             padding: 5px;
             width: 300px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .button {
@@ -43,24 +54,24 @@
             margin: 5px;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: right;
-            margin-top: 0px;
-        }
-
         .button:hover {
             background: lightgrey;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+            <a class="logotipo" href="/supervisor">
+                <img src="/static/images/logo.png" alt="Continental" class="logo">
+            </a>
+        </div>
+    </nav>
     <div class="container">
         <div class="signature-box">
             <label>Validação Operador</label>
             <input id="signature1" type="text" placeholder="Digite a assinatura do operador">
         </div>
-
         <div class="signature-box">
             <label>Validação Supervisor</label>
             <input id="signature2" type="text" placeholder="Digite a assinatura do supervisor">
@@ -70,8 +81,10 @@
             <label>Validação VQ</label>
             <input id="signature3" type="text" placeholder="Digite a assinatura do VQ">
         </div>
-        <button class="button" onclick="validateSignatures()">Conclusão</button>
-        <button class="button">Checklist</button>
+        <div class="button-container">
+            <button class="button" onclick="validateSignatures()">Conclusão</button>
+            <button class="button">Checklist</button>
+        </div>
     </div>
 
     <script>
