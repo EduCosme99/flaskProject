@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .signature-box {
+            margin-bottom: 20px;
+        }
+
+        .signature-box label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .signature-box input {
+            border: 1px solid #ccc;
+            padding: 5px;
+            width: 300px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            color: #000000;
+            background: #FFA500;
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            display: inline-block;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: right;
+            margin-top: 0px;
+        }
+
+        .button:hover {
+            background: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signature-box">
+            <label>Validação Operador</label>
+            <input id="signature1" type="text" placeholder="Digite a assinatura do operador">
+        </div>
+
+        <div class="signature-box">
+            <label>Validação Supervisor</label>
+            <input id="signature2" type="text" placeholder="Digite a assinatura do supervisor">
+        </div>
+
+        <div class="signature-box">
+            <label>Validação VQ</label>
+            <input id="signature3" type="text" placeholder="Digite a assinatura do VQ">
+        </div>
+        <button class="button" onclick="validateSignatures()">Conclusão</button>
+        <button class="button">Checklist</button>
+    </div>
+
+    <script>
+        function validateSignatures() {
+            var signature1 = document.getElementById("signature1").value.trim();
+            var signature2 = document.getElementById("signature2").value.trim();
+            var signature3 = document.getElementById("signature3").value.trim();
+
+            if (signature1 === "" || signature2 === "" || signature3 === "") {
+                alert("Por favor, preencha todas as três assinaturas.");
+            } else {
+                alert("Assinaturas válidas!");
+                // Adicione aqui o código para enviar os dados do formulário ou realizar outras ações necessárias.
+            }
+        }
+    </script>
+</body>
+</html>
