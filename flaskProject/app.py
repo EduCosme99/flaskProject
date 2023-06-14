@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from datetime import datetime
+from sqlalchemy import Time
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///continental.db'
@@ -67,17 +69,19 @@ class Posto(db.Model):
 
 class Turno(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    inicio_turno = db.Column(db.DateTime(), nullable=False)
-    fim_turno = db.Column(db.DateTime(), nullable=False)
+    inicio_turno = db.Column(db.Time(), nullable=False)
+    fim_turno = db.Column(db.Time(), nullable=False)
 
 
 with app.app_context():
     db.create_all()
 
+migrate = Migrate(app, db)
+
 
 def get_turno_atual():
-    now = datetime.now()
-    turno_atual = Turno.query.filter(Turno.inicio_turno <= now, Turno.fim_turno <= now).first()
+    now = datetime.now().time()
+    turno_atual = Turno.query.filter(Turno.inicio_turno <= now, Turno.fim_turno >= now).first()
     return turno_atual
 
 
