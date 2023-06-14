@@ -170,5 +170,15 @@ def adicionar_operadorvq():
     return render_template('AdicionarOperadorVQ.html')
 
 
+@app.route('/observacao')
+def observacao():
+    return render_template('Observacoes.html')
+
+
+@app.route('/validacao')
+def validacao():
+    return render_template('Validaçao.html')
+
+
 if __name__ == '__main__':
     app.run()
