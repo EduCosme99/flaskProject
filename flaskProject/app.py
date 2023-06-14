@@ -77,7 +77,7 @@ with app.app_context():
 
 def get_turno_atual():
     now = datetime.now()
-    turno_atual = Turno.query.filter(Turno.inicio_turno <= now, Turno.fim_turno >= now).first()
+    turno_atual = Turno.query.filter(Turno.inicio_turno <= now, Turno.fim_turno <= now).first()
     return turno_atual
 
 
