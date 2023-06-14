@@ -142,6 +142,12 @@ def lista_funcionarios():
     return render_template('ListaFuncionarios.html', funcionarios=funcionarios)
 
 
+@app.route('/lista_turnos')
+def lista_turnos():
+    turnos = Turno.query.all()
+    return render_template('ListaTurnos.html', turnos=turnos)
+
+
 @app.route('/lista_parametros')
 def lista_parametros():
     parametros = Parametro.query.all()

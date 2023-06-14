@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
-        <title>Lista de Parâmetros</title>
+        <title>Lista de Turnos</title>
         <link rel="stylesheet" href="/static/style/navigation_bar.css">
+        <link rel="stylesheet" href="/static/style/button.css">
         <script src="https://kit.fontawesome.com/e265fe7c7e.js" crossorigin="anonymous"></script>
         <style>
             table {
@@ -21,20 +22,6 @@
             }
             th {
                 background-color: #f2f2f2;
-            }
-            .editar-column {
-                width: 10px;
-            }
-            .eliminar-column {
-                width: 10px;
-            }
-            .editar-button {
-                color: #FFA500;
-                cursor: pointer;
-            }
-            .eliminar-button {
-                color: red;
-                cursor: pointer;
             }
         </style>
     </head>
@@ -68,22 +55,16 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Descrição</th>
-                    <th class="editar-column">Editar</th>
-                    <th class="eliminar-column">Eliminar</th>
+                    <th>Início de Turno</th>
+                    <th>Fim de Turno</th>
                 </tr>
             </thead>
             <tbody>
-                {% for parametro in parametros %}
+                {% for turno in turnos %}
                     <tr>
-                        <td>{{ parametro.id }}</td>
-                        <td>{{ parametro.descricao }}</td>
-                        <td class="editar-column">
-                            <span class="editar-button">!</span>
-                        </td>
-                        <td class="eliminar-column">
-                            <span class="eliminar-button" onclick="excluirParametro({{ parametro.id }})">X</span>
-                        </td>
+                        <td>{{ turno.id }}</td>
+                        <td>{{ turno.inicio_turno }}</td>
+                        <td>{{ turno.fim_turno }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -111,26 +92,6 @@
             }
 
             setInterval(updateTime, 1000);
-        </script>
-        <script>
-        function excluirParametro(parametroId) {
-            if (confirm("Tem certeza que deseja excluir este parâmetro?")) {
-                fetch('/excluir_parametro/' + parametroId, {
-                    method: 'POST'
-                })
-                .then(function(response) {
-                    if (response.ok) {
-                        location.reload();
-                    } else {
-                        alert("Erro ao excluir o parâmetro. Por favor, tente novamente.");
-                    }
-                })
-                .catch(function(error) {
-                    console.log(error);
-                    alert("Erro ao excluir o parâmetro. Por favor, tente novamente.");
-                });
-            }
-        }
         </script>
     </body>
 </html>
