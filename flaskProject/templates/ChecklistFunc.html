@@ -600,6 +600,7 @@
             }
             });
         }
+
         //Função para salvar o estado das checkboxes
         function saveState() {
             const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
@@ -618,6 +619,7 @@
             localStorage.setItem(fieldId, fieldValue);
             });
         }
+
         //Evento disparado quando uma checkbox é alterada
         document.addEventListener('change', function (event) {
         const target = event.target;
@@ -625,6 +627,7 @@
             saveState();
         }
         });
+
         //Evento disparado quando um campo de hora é alterado
         document.addEventListener('input', function (event) {
         const target = event.target;
@@ -632,6 +635,7 @@
             saveHoraState();
         }
         });
+
         //Restaurar o estado das checkboxes e das horas ao carregar a página
         document.addEventListener('DOMContentLoaded', function () {
         restoreCheckboxState();
