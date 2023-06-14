@@ -135,6 +135,11 @@ def pre_checklist():
     return render_template('ChecklistFunc.html')
 
 
+@app.route('/hotmelt')
+def hotmelt():
+    return render_template('Hotmelt.html')
+
+
 @app.route('/pos_checklist')
 def pos_checklist():
     return render_template('Checklist.html')

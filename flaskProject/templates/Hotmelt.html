@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
+        <title>Hotmelt</title>
+        <link rel="stylesheet" href="/static/style/navigation_bar.css">
+        <style>
+            header {
+                height: 70px;
+                background-color: #FFA500;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container {
+                display: flex;
+                max-height: 100vh;
+                overflow-y: auto;
+            }
+            .zona1 {
+                flex: 1;
+                height: 515px;
+                background-color: white;
+                padding: 20px;
+                margin-top: 60px;
+                margin-rigth: 40px;
+                margin-left: 25px;
+            }
+            .zona1 .item {
+                background-color: lightgray;
+                display: block;
+                padding: 10px;
+                margin-top: 17.5px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+            .zona2 {
+                flex: 1;
+                height: 450px;
+                background-color: white;
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            .zona2 p {
+                margin-bottom: 20px;
+            }
+            .zona1 span,
+            .zona2 label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .zona2 .checkbox-group {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .zona2 .checkbox-group label {
+                flex-basis: 12.5%;
+                display: flex;
+                align-items: center;
+            }
+            .zona2 .checkbox-group input[type="checkbox"] {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+                margin-top: 17px;
+            }
+            .checkbox-group {
+                margin-top: 15px;
+            }
+            .button {
+                padding: 10px 20px;
+                color: #000000;
+                background: #FFA500;
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 14px;
+                border-radius: 5px;
+                border: none;
+                display: inline-block;
+                text-align: center;
+                user-select: none;
+                cursor: pointer;
+                margin: 5px;
+                transition: box-shadow 0.15s, opacity 0.15s;
+            }
+            .button-container {
+                display: flex;
+                justify-content: right;
+                margin-top: 15px;
+            }
+            .button:hover {
+                box-shadow: 2px 2px 5px rgba(10,10,10,0.2);
+            }
+            .hora-campos {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+            .hora-item {
+                display: flex;
+                align-items: center;
+                margin-right: 100px;
+            }
+            .hora-item label {
+                margin-right: 5px;
+            }
+            .hora-item input {
+                width: 50px;
+                padding: 5px;
+                border: none;
+                border-bottom: 1px solid black;
+                background-color: transparent;
+            }
+            .descricao-campos {
+                display: flex;
+                margin-top: 0px;
+            }
+            .primeira-descricao-texto {
+                color: #FFA500;
+                display: inline-block;
+                margin-right: 200px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            .segunda-descricao-texto {
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-bar">
+                    <a class="logotipo" href="/supervisor">
+                        <img src="/static/images/logo.png" alt="Continental" class="logo">
+                    </a>
+                    <div class="menu">
+                        <ul class="nav-links">
+                            <li><a href="/supervisor">Home</a></li>
+                            <li><a href="/lista_turnos">Turnos</a></li>
+                            <li><a href="/lista_funcionarios">Funcionários</a></li>
+                            <li><a href="/lista_parametros">Parâmetros</a></li>
+                        </ul>
+                    </div>
+                    <div class="searchBox">
+                        <div class="searchToogle">
+                            <i class="fa-solid fa-magnifying-glass search"></i>
+                            <i class="fa-solid fa-xmark cancel"></i>
+                        </div>
+                        <div class="search-field">
+                            <input type="text" placeholder="Pesquisar...">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <div class="content">
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="zona1">
+                    <h2>15 Hotmelt:</h2>
+                        <span class="item">a. Operação a)</span>
+                        <span class="item">b. Operação b)</span>
+                </div>
+                <div class="zona2">
+                    <div class="descricao-campos">
+                        <span class="primeira-descricao-texto">Início do turno</span>
+                        <span class="segunda-descricao-texto">Verificar no início de cada produção</span>
+                    </div>
+                    <div class="hora-campos">
+                        <div class="hora-item">
+                            <label for="h1" >Hora:</label>
+                            <input type="text" id="h1" name="h1" placeholder="__h__">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h2">Hora:</label>
+                            <input type="text" id="h2" name="h2"placeholder="__h__">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h3">Hora:</label>
+                            <input type="text" id="h3" name="h3" placeholder="__h__">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h4">Hora:</label>
+                            <input type="text" id="h4" name="h4" placeholder="__h__">
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <label for="checkbox1">
+                            <input type="checkbox" id="checkbox1">
+                        </label>
+                        <label for="checkbox7">
+                            <input type="checkbox" id="checkbox7">
+                        </label>
+                        <label for="checkbox13">
+                            <input type="checkbox" id="checkbox13">
+                        </label>
+                        <label for="checkbox19">
+                            <input type="checkbox" id="checkbox19">
+                        </label>
+                        <label for="checkbox25">
+                            <input type="checkbox" id="checkbox25">
+                        </label>
+                        <label for="checkbox31">
+                            <input type="checkbox" id="checkbox31">
+                        </label>
+                        <label for="checkbox37">
+                            <input type="checkbox" id="checkbox37">
+                        </label>
+                        <label for="checkbox43">
+                            <input type="checkbox" id="checkbox43">
+                        </label>
+                        <label for="checkbox49">
+                            <input type="checkbox" id="checkbox49">
+                        </label>
+                        <label for="checkbox2">
+                            <input type="checkbox" id="checkbox2">
+                        </label>
+                        <label for="checkbox8">
+                            <input type="checkbox" id="checkbox8">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="location.href='/observacao'">Observações</button>
+            <button class="button">Soldadura</button>
+        </div>
+    </div>
+    <script>
+        function restoreState() {
+            //Restaurar estado das checkboxes
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = localStorage.getItem(checkboxId);
+                if (checkboxState === 'true') {
+                    checkbox.checked = true;
+                }
+            });
+            //Restaurar estado das horas
+            const horaFields = document.querySelectorAll('.hora-field');
+            horaFields.forEach(function (field) {
+                const fieldId = field.getAttribute('id');
+                const fieldValue = localStorage.getItem(fieldId);
+                if (fieldValue) {
+                    field.value = fieldValue;
+                }
+            });
+        }
+
+        //Função para restaurar o estado das checkboxes
+        function restoreCheckboxState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+            const checkboxId = checkbox.getAttribute('id');
+            const savedState = localStorage.getItem(checkboxId);
+
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+            });
+        }
+
+        //Função para restaurar o estado das horas
+        function restoreHoraState() {
+            const horaFields = document.querySelectorAll('.hora-field');
+            horaFields.forEach(function (field) {
+                const fieldId = field.getAttribute('id');
+                const savedValue = localStorage.getItem(fieldId);
+            if (savedValue) {
+                field.value = savedValue;
+            }
+            });
+        }
+
+        //Função para salvar o estado das checkboxes
+        function saveState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = checkbox.checked;
+            localStorage.setItem(checkboxId, checkboxState);
+            });
+        }
+        //Função para salvar o estado das horas
+        function saveHoraState() {
+            const horaFields = document.querySelectorAll('.hora-field');
+            horaFields.forEach(function (field) {
+                const fieldId = field.getAttribute('id');
+                const fieldValue = field.value;
+            localStorage.setItem(fieldId, fieldValue);
+            });
+        }
+
+        //Evento disparado quando uma checkbox é alterada
+        document.addEventListener('change', function (event) {
+        const target = event.target;
+        if (target.matches('.checkbox-group input[type="checkbox"]')) {
+            saveState();
+        }
+        });
+
+        //Evento disparado quando um campo de hora é alterado
+        document.addEventListener('input', function (event) {
+        const target = event.target;
+        if (target.matches('.hora-field')) {
+            saveHoraState();
+        }
+        });
+
+        //Restaurar o estado das checkboxes e das horas ao carregar a página
+        document.addEventListener('DOMContentLoaded', function () {
+        restoreCheckboxState();
+        restoreHoraState();
+        });
+    </script>
+    </body>
+</html>
