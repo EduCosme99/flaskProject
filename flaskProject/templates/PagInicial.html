@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="/static/style/button.css">
       <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
       <style>
-      /*Estilo Imagem*/
       #logo {
           width: 400px;
           length: 200px;
@@ -13,7 +12,18 @@
           margin-left: auto;
           margin-right: auto;
       }
-      /*Estilo Header*/
+      #banner {
+          width: 550px;
+          length: 350px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          position: fixed;
+          bottom: 25px;
+          left: 0;
+          right: 0;
+          margin-bottom: 0;
+      }
       h1 {
           color: #FFA500;
           text-align: center;
@@ -26,5 +36,6 @@
     <h1>LOGIN</h1>
     <button class="small_btn" onclick="location.href='/login_geral'">GERAL</button>
     <button class="small_btn" onclick="location.href='/login_supervisores'">SUPERVISORES</button>
+    <img src="/static/images/banner.png" id="banner">
   </body>
 </html>

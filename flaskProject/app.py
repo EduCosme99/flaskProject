@@ -107,7 +107,7 @@ def login_geral():
         funcionario = Funcionario.query.filter_by(password=password).first()
 
         if funcionario:
-            return redirect(url_for('checklists'))
+            return redirect(url_for('pre_checklist'))
         else:
             flash('Credenciais inválidas. Tente novamente', 'error')
 
