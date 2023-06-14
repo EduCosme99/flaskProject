@@ -14,8 +14,8 @@ body {
 }
 .container {
     position: relative;
-    max-width: 7000px;
-    width: 100%;
+    max-width: 6000px;
+    width: 50%;
     background: #FFFFFF;
     padding: 25px;
     border-radius: 8px;
