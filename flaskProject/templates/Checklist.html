@@ -100,28 +100,25 @@
       background: lightgrey;
     }
     .hora-campos {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-bottom: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 15px;
     }
-
     .hora-item {
-      display: flex;
-      align-items: center;
-      margin-right: 100px;
+        display: flex;
+        align-items: center;
+        margin-right: 100px;
     }
-
     .hora-item label {
-      margin-right: 5px;
+        margin-right: 5px;
     }
-
     .hora-item input {
-      width: 50px;
-      padding: 5px;
-      border: none;
-      border-bottom: 1px solid black;
-      background-color: transparent;
+        width: 75px;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: transparent;
     }
     .descricao-campos {
       display: flex;
@@ -176,31 +173,29 @@
       <span class="item">Os controlos SPC foram feitos e estão OK?</span>
       <span class="item">A ultima peça produzida está igual à 1ª peça validada de acordo com o circuito de autocontrolo (Esta verificação deve ser feita no fim de produção de cada referência).</span>
     </div>
-  <div class="zona2">
-    <div class="descricao-campos">
-     <span class="descricao-texto">Inicio do turno</span>
-     <span class="descricao-texto">Verificar no inicio de cada produção após mudança de produto e após intervenção técnica (Manutenção, processo) ou problema de qualidade)</span>
-    </div>
+    <div class="zona2">
+        <div class="descricao-campos">
+            <span class="primeira-descricao-texto">Início do turno</span>
+            <span class="segunda-descricao-texto">Verificar no início de cada produção</span>
+        </div>
         <div class="hora-campos">
-    <div class="hora-item">
-      <label for="hora1">Hora:</label>
-      <input type="text" id="hora1" name="hora1" placeholder="__:__">
-    </div>
-    <div class="hora-item">
-      <label for="hora2">Hora:</label>
-      <input type="text" id="hora2" name="hora2" placeholder="__:__">
-    </div>
-        <div class="hora-campos">
-    <div class="hora-item">
-      <label for="hora1">Hora:</label>
-      <input type="text" id="hora1" name="hora1" placeholder="__:__">
-    </div>
-    <div class="hora-item">
-      <label for="hora2">Hora:</label>
-      <input type="text" id="hora2" name="hora2" placeholder="__:__">
-    </div>
-  </div>
-  </div>
+            <div class="hora-item">
+                <label for="h1">Hora:</label>
+                <input type="time" id="h1" name="h1">
+            </div>
+            <div class="hora-item">
+                <label for="h2">Hora:</label>
+                <input type="time" id="h2" name="h2">
+            </div>
+            <div class="hora-item">
+                <label for="h3">Hora:</label>
+                <input type="time" id="h3" name="h3">
+            </div>
+            <div class="hora-item">
+                <label for="h4">Hora:</label>
+                <input type="time" id="h4" name="h4">
+            </div>
+        </div>
       <div class="checkbox-group">
         <label for="checkbox1">
           <input type="checkbox" id="checkbox1">
@@ -306,5 +301,94 @@
       <button class="button">Concluir</button>
     </div>
   </div>
+     <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
+        <span id="date"></span> - <span id="time"></span>
+    </div>
+    <script>
+        const body = document.querySelector("body"),
+            dateElem = document.querySelector("#date"),
+            timeElem = document.querySelector("#time");
+
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            dateElem.textContent = date;
+            timeElem.textContent = time;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+    <script>
+        function restoreState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = localStorage.getItem(checkboxId);
+                if (checkboxState === 'true') {
+                    checkbox.checked = true;
+                }
+            });
+        }
+        function restoreCheckboxState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+            const checkboxId = checkbox.getAttribute('id');
+            const savedState = localStorage.getItem(checkboxId);
+
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+            });
+        }
+        function saveState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = checkbox.checked;
+            localStorage.setItem(checkboxId, checkboxState);
+            });
+        }
+        document.addEventListener('change', function (event) {
+        const target = event.target;
+        if (target.matches('.checkbox-group input[type="checkbox"]')) {
+            saveState();
+        }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+        restoreCheckboxState();
+        });
+    </script>
+    <script>
+        function salvarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = campo.value;
+                localStorage.setItem(campoId, campoValor);
+            });
+        }
+        function restaurarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = localStorage.getItem(campoId);
+                if (campoValor) {
+                    campo.value = campoValor;
+                }
+            });
+        }
+        const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+        camposHora.forEach(function (campo) {
+            campo.addEventListener('change', salvarEstadoCampos);
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            restaurarEstadoCampos();
+        });
+    </script>
+    </body>
+</html>
 </body>
 </html>

@@ -5,9 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
-        <title>Soldadura</title>
+        <title>Pré inicialização</title>
         <link rel="stylesheet" href="/static/style/navigation_bar.css">
         <style>
+            header {
+                height: 70px;
+                background-color: #FFA500;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h2 {
+                font-size: 22.5px;
+            }
             header {
                 height: 70px;
                 background-color: #FFA500;
@@ -78,23 +89,23 @@
             display: inline-block;
             }
             .button {
-            padding: 10px 20px;
-            color: #000000;
-            background: #FFA500;
-            font-family: "Trebuchet MS", sans-serif;
-            font-size: 14px;
-            border-radius: 5px;
-            border: none;
-            display: inline-block;
-            text-align: center;
-            user-select: none;
-            cursor: pointer;
-            margin: 5px;
-            transition: box-shadow 0.15s, opacity 0.15s;
+                padding: 10px 20px;
+                color: #000000;
+                background: #FFA500;
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 14px;
+                border-radius: 5px;
+                border: none;
+                display: inline-block;
+                text-align: center;
+                user-select: none;
+                cursor: pointer;
+                margin: 5px;
+                transition: box-shadow 0.15s, opacity 0.15s;
             }
             .button-container {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: right;
                 margin-top: 15px;
             }
             .button:hover {
@@ -115,7 +126,7 @@
                 margin-right: 5px;
             }
             .hora-item input {
-                width: 50px;
+                width: 75px;
                 padding: 5px;
                 border: none;
                 border-bottom: 1px solid black;
@@ -136,6 +147,7 @@
             .segunda-descricao-texto {
                 text-align: center;
                 margin-bottom: 10px;
+                margin-right: 0px;
                 font-weight: bold;
             }
         </style>
@@ -143,8 +155,8 @@
     <body>
         <header>
             <nav>
-                <div class="nav-bar"´style="display: flex; justify-content: center; align-items: center;">
-                    <a class="logotipo" href="/soldadura">
+                <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+                    <a class="logotipo" href="/pre_checklist">
                         <img src="/static/images/logo.png" alt="Continental" class="logo">
                     </a>
                 </div>
@@ -154,28 +166,28 @@
         <div class="content-wrapper">
             <div class="container">
                 <div class="zona1">
-                    <h2>16 Soldadura: </h2>
-                        <span class="item">1. As pontas dos ferros de soldar foram mudadas ? Na soldadura manual a mudança é semanal. No Robot, é por quantidade de pontos soldados.</span>
-                        <span class="item">2. As pontas dos ferros de soldar foram mudadas ? Na soldadura manual a mudança é semanal. No Robot, é por quantidade de pontos soldados.</span>
-                        <span class="item">3. No Robot, a agulha da ponta de soldar encontra-se em bom estado?</span>
-                        <span class="item">4. Os extractores de fumos estão ligados e a funcionar?</span>
-                        <span class="item">5. O nível do Azoto está na zona verde? (quando aplicável com robots com manometro manual)</span>
-                        <span class="item">6. Os níveis de água no reservatório no robot estão dentro do limite? (encher caso estiver próximo ou abaixo do vermelho-quando aplicável nos robots com depósito)</span>
-                        <span class="item">7. A temperatura dos ferros de soldar foi verificada na última semana?</span>
-                        <span class="item">8. A temperatura dos ferros de soldar foi verificada na última semana?</span>
-                        <span class="item">9. A temperatura dos ferros de soldar do display está de acordo com a lista?</span>
-                        <span class="item">10. O tipo de solda está de acordo com a lista?</span>
+                    <h2>Operação de Verificação antes de iniciar produção:</h2>
+                        <span class="item">a) As pontas dos ferros de soldar foram mudadas ? Na soldadura manual a mudança é semanal. No Robot, é por quantidade de pontos soldados.</span>
+                        <span class="item">b) As pontas dos ferros de soldar foram mudadas ? Na soldadura manual a mudança é semanal. No Robot, é por quantidade de pontos soldados.</span>
+                        <span class="item">c) No Robot, a agulha da ponta de soldar encontra-se em bom estado?</span>
+                        <span class="item">d) Os extractores de fumos estão ligados e a funcionar?</span>
+                        <span class="item">e) O nível do Azoto está na zona verde? (quando aplicável com robots com manometro manual)</span>
+                        <span class="item">f) Os níveis de água no reservatório no robot estão dentro do limite? (encher caso estiver próximo ou abaixo do vermelho-quando aplicável nos robots com depósito)</span>
+                        <span class="item">g) A temperatura dos ferros de soldar foi verificada na última semana?</span>
+                        <span class="item">h) A temperatura dos ferros de soldar foi verificada na última semana?</span>
+                        <span class="item">i) A temperatura dos ferros de soldar do display está de acordo com a lista?</span>
+                        <span class="item">j) O tipo de solda está de acordo com a lista?</span>
                 </div>
                 <div class="zona2">
                     <div class="descricao-campos">
                         <span class="primeira-descricao-texto">Início do turno</span>
+                        <span class="segunda-descricao-texto">Verificar no início de cada produção</span>
                     </div>
                     <div class="hora-campos">
                         <div class="hora-item">
-                            <label for="h1" >Hora:</label>
-                            <input type="text" id="h1" name="h1" placeholder="__h__">
+                            <label for="h1">Hora:</label>
+                            <input type="time" id="h1" name="h1">
                         </div>
-                    </div>
                     <div class="checkbox-grid">
                         <div class="checkbox-row">
                             <div class="checkbox-item">
@@ -281,93 +293,97 @@
                 </div>
             </div>
         </div>
-    </div>
         <div class="button-container">
             <button class="button" onclick="location.href='/observacao'">Observações</button>
-            <button class="button" onclick="location.href='/hotmelt'">Hotmelt</button>
+          <!--<button class="button" onclick="location.href='/aparafusamento'">Aparafusamento</button>-->
         </div>
-        <script>
-            function restoreState() {
-                //Restaurar estado das checkboxes
-                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
-                checkboxes.forEach(function (checkbox) {
-                    const checkboxId = checkbox.getAttribute('id');
-                    const checkboxState = localStorage.getItem(checkboxId);
-                    if (checkboxState === 'true') {
-                        checkbox.checked = true;
-                    }
-                });
-                //Restaurar estado das horas
-                const horaFields = document.querySelectorAll('.hora-field');
-                horaFields.forEach(function (field) {
-                    const fieldId = field.getAttribute('id');
-                    const fieldValue = localStorage.getItem(fieldId);
-                    if (fieldValue) {
-                        field.value = fieldValue;
-                    }
-                });
-            }
-            //Função para restaurar o estado das checkboxes
-            function restoreCheckboxState() {
-                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
-                checkboxes.forEach(function (checkbox) {
-                    const checkboxId = checkbox.getAttribute('id');
-                    const savedState = localStorage.getItem(checkboxId);
-                    if (savedState === 'true') {
-                        checkbox.checked = true;
-                    } else {
-                        checkbox.checked = false;
-                    }
-                });
-            }
-            //Função para restaurar o estado das horas
-            function restoreHoraState() {
-                const horaFields = document.querySelectorAll('.hora-field');
-                horaFields.forEach(function (field) {
-                    const fieldId = field.getAttribute('id');
-                    const savedValue = localStorage.getItem(fieldId);
-                    if (savedValue) {
-                        field.value = savedValue;
-                    }
-                });
-            }
-            //Função para salvar o estado das checkboxes
-            function saveState() {
-                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
-                checkboxes.forEach(function (checkbox) {
-                    const checkboxId = checkbox.getAttribute('id');
-                    const checkboxState = checkbox.checked;
-                localStorage.setItem(checkboxId, checkboxState);
-                });
-            }
-            //Função para salvar o estado das horas
-            function saveHoraState() {
-                const horaFields = document.querySelectorAll('.hora-field');
-                horaFields.forEach(function (field) {
-                    const fieldId = field.getAttribute('id');
-                    const fieldValue = field.value;
-                localStorage.setItem(fieldId, fieldValue);
-                });
-            }
-            //Evento disparado quando uma checkbox é alterada
-            document.addEventListener('change', function (event) {
-                const target = event.target;
-                if (target.matches('.checkbox-group input[type="checkbox"]')) {
-                    saveState();
+    </div>
+    <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
+        <span id="date"></span> - <span id="time"></span>
+    </div>
+    <script>
+        const body = document.querySelector("body"),
+            dateElem = document.querySelector("#date"),
+            timeElem = document.querySelector("#time");
+
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            dateElem.textContent = date;
+            timeElem.textContent = time;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+    <script>
+        function restoreState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = localStorage.getItem(checkboxId);
+                if (checkboxState === 'true') {
+                    checkbox.checked = true;
                 }
             });
-            //Evento disparado quando um campo de hora é alterado
-            document.addEventListener('input', function (event) {
-                const target = event.target;
-                if (target.matches('.hora-field')) {
-                    saveHoraState();
+        }
+        function restoreCheckboxState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+            const checkboxId = checkbox.getAttribute('id');
+            const savedState = localStorage.getItem(checkboxId);
+
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+            });
+        }
+        function saveState() {
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checkboxState = checkbox.checked;
+            localStorage.setItem(checkboxId, checkboxState);
+            });
+        }
+        document.addEventListener('change', function (event) {
+        const target = event.target;
+        if (target.matches('.checkbox-group input[type="checkbox"]')) {
+            saveState();
+        }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+        restoreCheckboxState();
+        });
+    </script>
+    <script>
+        function salvarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = campo.value;
+                localStorage.setItem(campoId, campoValor);
+            });
+        }
+        function restaurarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = localStorage.getItem(campoId);
+                if (campoValor) {
+                    campo.value = campoValor;
                 }
             });
-            //Restaurar o estado das checkboxes e das horas ao carregar a página
-            document.addEventListener('DOMContentLoaded', function () {
-                restoreCheckboxState();
-                restoreHoraState();
-            });
-        </script>
+        }
+        const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+        camposHora.forEach(function (campo) {
+            campo.addEventListener('change', salvarEstadoCampos);
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            restaurarEstadoCampos();
+        });
+    </script>
     </body>
 </html>
