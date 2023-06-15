@@ -99,6 +99,12 @@ def pag_inicial():
     return render_template('PagInicial.html')
 
 
+@app.route('/')
+@app.route('/logout')
+def logout():
+    return render_template('Logout.html')
+
+
 @app.route('/login_geral', methods=['GET', 'POST'])
 def login_geral():
     if request.method == 'POST':
