@@ -50,9 +50,10 @@
                 <div class="input-box">
                     <label>Parâmetro</label>
                     <select name="parametro">
-                        <option value="" disabled selected>Selecione a alínea do parâmetro</option>
-                        <option value="1">a)</option>
-                        <option value="2">b)</option>
+                        <option value="" disabled selected>Selecione o número do parâmetro</option>
+                        {% for parametro in parametros %}
+                            <option value="{{ parametro.id }}">{{ parametro.id }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="input-box">
