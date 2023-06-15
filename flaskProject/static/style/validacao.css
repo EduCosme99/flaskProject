@@ -10,12 +10,12 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #FFA500;
+    background-color: #F2F2F2;
 }
 .container {
     position: relative;
     max-width: 7000px;
-    width: 100%;
+    width: 40%;
     background: #FFFFFF;
     padding: 25px;
     border-radius: 8px;
@@ -33,7 +33,7 @@ body {
 }
 .form .input-box {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .input-box label {
     color: #1E1C1B;

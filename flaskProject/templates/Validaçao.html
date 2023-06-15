@@ -29,7 +29,7 @@
             .button-container {
                 display: flex;
                 justify-content: space-between;
-                margin-top: 5px;
+                margin-top: 10px;
             }
             .button:hover {
                 box-shadow: 2px 2px 5px rgba(10,10,10,0.2);
@@ -46,22 +46,24 @@
         </nav>
         <section class="container" style="display: flex; flex-direction: column; align-items: center;">
             <header style="font-weight: bold; margin-bottom: 15px;">Validação</header>
-            <div class="input-box">
-                <label>Validação Operador</label>
-                <input id="signature1" type="text" placeholder="Digite a assinatura do operador">
-            </div>
-            <div class="input-box">
-                <label>Validação Supervisor</label>
-                <input id="signature2" type="text" placeholder="Digite a assinatura do supervisor">
-            </div>
-            <div class="input-box">
-                <label>Validação VQ</label>
-                <input id="signature3" type="text" placeholder="Digite a assinatura do VQ">
-            </div>
-            <div class="button-container">
-                <button class="button" style="background-color: lightgrey" onclick="location.href='/pre_checklist'">Voltar</button>
-                <button class="button" onclick="location.href='/pre_checklist'">Validar</button>
-            </div>
+            <form action="#" class="form">
+                <div class="input-box">
+                    <label>Validação Operador</label>
+                    <input id="signature1" type="text" placeholder="Digite a assinatura do operador">
+                </div>
+                <div class="input-box">
+                    <label>Validação Supervisor</label>
+                    <input id="signature2" type="text" placeholder="Digite a assinatura do supervisor">
+                </div>
+                <div class="input-box">
+                    <label>Validação VQ</label>
+                    <input id="signature3" type="text" placeholder="Digite a assinatura do VQ">
+                </div>
+                <div class="button-container">
+                    <button class="button" style="background-color: lightgrey" onclick="location.href='/pre_checklist'">Voltar</button>
+                    <button class="button" onclick="location.href='/pre_checklist'">Validar</button>
+                </div>
+            </form>
         </section>
     </body>
 </html>
