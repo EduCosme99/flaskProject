@@ -195,5 +195,10 @@ def validacao():
     return render_template('Validaçao.html')
 
 
+@app.route('/soldadura')
+def soldadura():
+    return render_template('Soldadura.html')
+
+
 if __name__ == '__main__':
     app.run()
