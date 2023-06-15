@@ -1,10 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
+        <title>Ultrasons</title>
+        <link rel="stylesheet" href="/static/style/navigation_bar.css">
+        <style>
+            header {
+                height: 70px;
+                background-color: #FFA500;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h2 {
+                font-size: 22.5px;
+            }
+            .container {
+                display: flex;
+                max-height: 100vh;
+                overflow-y: auto;
+            }
+            .zona1 {
+                flex: 1;
+                height: 515px;
+                background-color: white;
+                padding: 20px;
+                margin-top: 60px;
+                margin-left: 25px;
+            }
+            .zona1 .item {
+                background-color: lightgray;
+                display: block;
+                padding: 10px;
+                margin-top: 17.5px;
+                margin-right: 25px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+            .zona2 {
+                flex: 1;
+                height: 450px;
+                background-color: white;
+                margin-top: 20px;
+                margin-right: 312.5px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            .zona2 p {
+                margin-bottom: 20px;
+            }
+            .zona1 span,
+            .zona2 label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .zona2 .checkbox-row {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 11.5px;
+            }
+            .zona2 .checkbox-item {
+                display: flex;
+                align-items: center;
+                width: 19%;
+                margin-bottom: 10px;
+            }
+            .zona2 .checkbox-item input[type="checkbox"] {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
+            .button {
+                padding: 10px 20px;
+                color: #000000;
+                background: #FFA500;
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 14px;
+                border-radius: 5px;
+                border: none;
+                display: inline-block;
+                text-align: center;
+                user-select: none;
+                cursor: pointer;
+                margin: 5px;
+                transition: box-shadow 0.15s, opacity 0.15s;
+            }
+            .button-container {
+                display: flex;
+                justify-content: right;
+                margin-top: 15px;
+            }
+            .button:hover {
+                box-shadow: 2px 2px 5px rgba(10,10,10,0.2);
+            }
+            .hora-campos {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 46.5px;
+            }
+            .hora-item {
+                display: flex;
+                align-items: center;
+                margin-right: 100px;
+            }
+            .hora-item label {
+                margin-right: 5px;
+            }
+            .hora-item input {
+                width: 75px;
+                padding: 5px;
+                border: none;
+                border-bottom: 1px solid black;
+                background-color: transparent;
+            }
+            .descricao-campos {
+                display: flex;
+                margin-top: 0px;
+            }
+            .primeira-descricao-texto {
+                color: #FFA500;
+                display: inline-block;
+                margin-right: 200px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+                    <a class="logotipo" href="/ultrasons">
+                        <img src="/static/images/logo.png" alt="Continental" class="logo">
+                    </a>
+                </div>
+            </nav>
+        </header>
+    <div class="content">
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="zona1">
+                    <h2>Ultrasons:</h2>
+                    {% for parametro in parametros %}
+                        <span class="item">{{ parametro.id }}. {{ parametro.descricao }}</span>
+                    {% endfor %}
+                </div>
+                <div class="zona2">
+                    <div class="descricao-campos">
+                        <span class="primeira-descricao-texto">Início do turno</span>
+                    </div>
+                    <div class="hora-campos">
+                        <div class="hora-item">
+                            <label for="h11">Hora:</label>
+                            <input type="time" id="h11" name="h11">
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="checkbox1">
+                                <label for="checkbox1"></label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="checkbox2">
+                                <label for="checkbox2"  class="second-column-label"></label>
+                            </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox3">
+                            <label for="checkbox3"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox4">
+                            <label for="checkbox4"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="button-container">
+            <button class="button" onclick="location.href='/obs_ultrasons'">Observações</button>
+            <button class="button" onclick="location.href='/seguranca'">Segurança</button>
+        </div>
+        <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
+            <span id="date"></span> - <span id="time"></span>
+        </div>
+        <script>
+            const body = document.querySelector("body"),
+                dateElem = document.querySelector("#date"),
+                timeElem = document.querySelector("#time");
 
-</body>
+            function updateTime() {
+                const now = new Date();
+                const date = now.toLocaleDateString();
+                const time = now.toLocaleTimeString();
+                dateElem.textContent = date;
+                timeElem.textContent = time;
+            }
+
+            setInterval(updateTime, 1000);
+        </script>
+        <script>
+            function restoreState() {
+                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+                checkboxes.forEach(function (checkbox) {
+                    const checkboxId = checkbox.getAttribute('id');
+                    const checkboxState = localStorage.getItem(checkboxId);
+                    if (checkboxState === 'true') {
+                        checkbox.checked = true;
+                    }
+                });
+            }
+            function restoreCheckboxState() {
+                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+                checkboxes.forEach(function (checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const savedState = localStorage.getItem(checkboxId);
+
+                if (savedState === 'true') {
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                }
+                });
+            }
+            function saveState() {
+                const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+                checkboxes.forEach(function (checkbox) {
+                    const checkboxId = checkbox.getAttribute('id');
+                    const checkboxState = checkbox.checked;
+                localStorage.setItem(checkboxId, checkboxState);
+                });
+            }
+            document.addEventListener('change', function (event) {
+            const target = event.target;
+            if (target.matches('.checkbox-group input[type="checkbox"]')) {
+                saveState();
+            }
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+            restoreCheckboxState();
+            });
+        </script>
+        <script>
+            function salvarEstadoCampos() {
+                const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+                camposHora.forEach(function (campo) {
+                    const campoId = campo.getAttribute('id');
+                    const campoValor = campo.value;
+                    localStorage.setItem(campoId, campoValor);
+                });
+            }
+            function restaurarEstadoCampos() {
+                const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+                camposHora.forEach(function (campo) {
+                    const campoId = campo.getAttribute('id');
+                    const campoValor = localStorage.getItem(campoId);
+                    if (campoValor) {
+                        campo.value = campoValor;
+                    }
+                });
+            }
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                campo.addEventListener('change', salvarEstadoCampos);
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                restaurarEstadoCampos();
+            });
+        </script>
+    </body>
 </html>
