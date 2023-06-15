@@ -16,6 +16,9 @@
                 align-items: center;
                 justify-content: center;
             }
+            h2 {
+                font-size: 22.5px;
+            }
             .container {
                 display: flex;
                 max-height: 100vh;
@@ -27,7 +30,6 @@
                 background-color: white;
                 padding: 20px;
                 margin-top: 60px;
-                margin-rigth: 40px;
                 margin-left: 25px;
             }
             .zona1 .item {
@@ -35,6 +37,7 @@
                 display: block;
                 padding: 10px;
                 margin-top: 17.5px;
+                margin-right: 25px;
                 margin-bottom: 10px;
                 border-radius: 5px;
             }
@@ -42,7 +45,7 @@
                 flex: 1;
                 height: 450px;
                 background-color: white;
-                padding: 25px;
+                margin-top: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -68,8 +71,8 @@
             .zona2 .checkbox-group input[type="checkbox"] {
                 width: 35px;
                 height: 35px;
-                margin-right: 10px;
-                margin-top: 17px;
+                margin-right: 20px;
+                margin-top: 16.8px;
             }
             .checkbox-group {
                 margin-top: 15px;
@@ -112,7 +115,7 @@
                 margin-right: 5px;
             }
             .hora-item input {
-                width: 50px;
+                width: 75px;
                 padding: 5px;
                 border: none;
                 border-bottom: 1px solid black;
@@ -174,20 +177,20 @@
                     </div>
                     <div class="hora-campos">
                         <div class="hora-item">
-                            <label for="h1" >Hora:</label>
-                            <input type="text" id="h1" name="h1" placeholder="__h__">
+                            <label for="h1">Hora:</label>
+                            <input type="time" id="h1" name="h1">
                         </div>
                         <div class="hora-item">
                             <label for="h2">Hora:</label>
-                            <input type="text" id="h2" name="h2"placeholder="__h__">
+                            <input type="time" id="h2" name="h2">
                         </div>
                         <div class="hora-item">
                             <label for="h3">Hora:</label>
-                            <input type="text" id="h3" name="h3" placeholder="__h__">
+                            <input type="time" id="h3" name="h3">
                         </div>
                         <div class="hora-item">
                             <label for="h4">Hora:</label>
-                            <input type="text" id="h4" name="h4" placeholder="__h__">
+                            <input type="time" id="h4" name="h4">
                         </div>
                     </div>
                     <div class="checkbox-group">
@@ -556,7 +559,6 @@
     </script>
     <script>
         function restoreState() {
-            //Restaurar estado das checkboxes
             const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
             checkboxes.forEach(function (checkbox) {
                 const checkboxId = checkbox.getAttribute('id');
@@ -565,18 +567,7 @@
                     checkbox.checked = true;
                 }
             });
-            //Restaurar estado das horas
-            const horaFields = document.querySelectorAll('.hora-field');
-            horaFields.forEach(function (field) {
-                const fieldId = field.getAttribute('id');
-                const fieldValue = localStorage.getItem(fieldId);
-                if (fieldValue) {
-                    field.value = fieldValue;
-                }
-            });
         }
-
-        //Função para restaurar o estado das checkboxes
         function restoreCheckboxState() {
             const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
             checkboxes.forEach(function (checkbox) {
@@ -590,20 +581,6 @@
             }
             });
         }
-
-        //Função para restaurar o estado das horas
-        function restoreHoraState() {
-            const horaFields = document.querySelectorAll('.hora-field');
-            horaFields.forEach(function (field) {
-                const fieldId = field.getAttribute('id');
-                const savedValue = localStorage.getItem(fieldId);
-            if (savedValue) {
-                field.value = savedValue;
-            }
-            });
-        }
-
-        //Função para salvar o estado das checkboxes
         function saveState() {
             const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
             checkboxes.forEach(function (checkbox) {
@@ -612,36 +589,41 @@
             localStorage.setItem(checkboxId, checkboxState);
             });
         }
-        //Função para salvar o estado das horas
-        function saveHoraState() {
-            const horaFields = document.querySelectorAll('.hora-field');
-            horaFields.forEach(function (field) {
-                const fieldId = field.getAttribute('id');
-                const fieldValue = field.value;
-            localStorage.setItem(fieldId, fieldValue);
-            });
-        }
-
-        //Evento disparado quando uma checkbox é alterada
         document.addEventListener('change', function (event) {
         const target = event.target;
         if (target.matches('.checkbox-group input[type="checkbox"]')) {
             saveState();
         }
         });
-
-        //Evento disparado quando um campo de hora é alterado
-        document.addEventListener('input', function (event) {
-        const target = event.target;
-        if (target.matches('.hora-field')) {
-            saveHoraState();
-        }
-        });
-
-        //Restaurar o estado das checkboxes e das horas ao carregar a página
         document.addEventListener('DOMContentLoaded', function () {
         restoreCheckboxState();
-        restoreHoraState();
+        });
+    </script>
+    <script>
+        function salvarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = campo.value;
+                localStorage.setItem(campoId, campoValor);
+            });
+        }
+        function restaurarEstadoCampos() {
+            const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+            camposHora.forEach(function (campo) {
+                const campoId = campo.getAttribute('id');
+                const campoValor = localStorage.getItem(campoId);
+                if (campoValor) {
+                    campo.value = campoValor;
+                }
+            });
+        }
+        const camposHora = document.querySelectorAll('.hora-campos input[type="time"]');
+        camposHora.forEach(function (campo) {
+            campo.addEventListener('change', salvarEstadoCampos);
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            restaurarEstadoCampos();
         });
     </script>
     </body>
