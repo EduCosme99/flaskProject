@@ -144,32 +144,38 @@ def pre_checklist():
 
 @app.route('/hotmelt')
 def hotmelt():
-    return render_template('Hotmelt.html')
+    parametros = Parametro.query.filter(Parametro.id.between(15, 16)).all()
+    return render_template('Hotmelt.html', parametros=parametros)
 
 
 @app.route('/soldadura')
 def soldadura():
-    return render_template('Soldadura.html')
+    parametros = Parametro.query.filter(Parametro.id.between(17, 25)).all()
+    return render_template('Soldadura.html', parametros=parametros)
 
 
 @app.route('/aparafusamento')
 def aparafusamento():
-    return render_template('Aparafusamento.html')
+    parametros = Parametro.query.filter(Parametro.id.between(26, 28)).all()
+    return render_template('Aparafusamento.html', parametros=parametros)
 
 
 @app.route('/ultrasons')
 def ultrasons():
-    return render_template('Ultrasons.html')
+    parametros = Parametro.query.filter(Parametro.id.between(29, 30)).all()
+    return render_template('Ultrasons.html', parametros=parametros)
 
 
 @app.route('/seguranca')
 def seguranca():
-    return render_template('Segurança.html')
+    parametro = Parametro.query.filter_by(id=31).first()
+    return render_template('Segurança.html', parametro=parametro)
 
 
 @app.route('/pos_checklist')
 def pos_checklist():
-    return render_template('Checklist.html')
+    parametros = Parametro.query.filter(Parametro.id.between(32, 35)).all()
+    return render_template('Checklist.html', parametros=parametros)
 
 
 @app.route('/lista_funcionarios')
@@ -214,32 +220,44 @@ def adicionar_operadorvq():
 
 @app.route('/observacao')
 def observacao():
-    return render_template('Observacoes.html')
+    parametros = Parametro.query.filter(Parametro.id.between(1, 14)).all()
+    return render_template('Observacoes.html', parametros=parametros)
 
 
 @app.route('/obs_hotmelt')
 def obs_hotmelt():
-    return render_template('ObsHotmelt.html')
+    parametros = Parametro.query.filter(Parametro.id.between(15, 16)).all()
+    return render_template('ObsHotmelt.html', parametros=parametros)
 
 
 @app.route('/obs_soldadura')
 def obs_soldadura():
-    return render_template('ObsSoldadura.html')
+    parametros = Parametro.query.filter(Parametro.id.between(17, 25)).all()
+    return render_template('ObsSoldadura.html', parametros=parametros)
 
 
 @app.route('/obs_aparafusamento')
 def obs_aparafusamento():
-    return render_template('ObsAparafusamento.html')
+    parametros = Parametro.query.filter(Parametro.id.between(26, 28)).all()
+    return render_template('ObsAparafusamento.html', parametros=parametros)
 
 
 @app.route('/obs_ultrasons')
 def obs_ultrasons():
-    return render_template('ObsUltrasons.html')
+    parametros = Parametro.query.filter(Parametro.id.between(29, 30)).all()
+    return render_template('ObsUltrasons.html', parametros=parametros)
 
 
 @app.route('/obs_seguranca')
 def obs_seguranca():
-    return render_template('ObsSeguranca.html')
+    parametro = Parametro.query.filter_by(id=31).first()
+    return render_template('ObsSeguranca.html', parametro=parametro)
+
+
+@app.route('/obs_final')
+def obs_final():
+    parametros = Parametro.query.filter(Parametro.id.between(32, 35)).all()
+    return render_template('ObsFinal.html', parametros=parametros)
 
 
 @app.route('/validacao')
