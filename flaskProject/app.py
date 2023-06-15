@@ -138,7 +138,8 @@ def login_supervisores():
 
 @app.route('/pre_checklist')
 def pre_checklist():
-    return render_template('ChecklistFunc.html')
+    parametros = Parametro.query.filter(Parametro.id.between(1, 14)).all()
+    return render_template('ChecklistFunc.html', parametros=parametros)
 
 
 @app.route('/hotmelt')

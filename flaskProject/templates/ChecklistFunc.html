@@ -156,20 +156,9 @@
             <div class="container">
                 <div class="zona1">
                     <h2>Operação de Verificação antes de iniciar produção:</h2>
-                        <span class="item">1. Operação 1</span>
-                        <span class="item">2. Operação 2</span>
-                        <span class="item">3. Operação 3</span>
-                        <span class="item">4. Operação 4</span>
-                        <span class="item">5. Operação 5</span>
-                        <span class="item">6. Operação 6</span>
-                        <span class="item">7. Operação 7</span>
-                        <span class="item">8. Operação 8</span>
-                        <span class="item">9. Operação 9</span>
-                        <span class="item">10. Operação 10</span>
-                        <span class="item">11. Operação 11</span>
-                        <span class="item">12. Operação 12</span>
-                        <span class="item">13. Operação 13</span>
-                        <span class="item">14. Operação 14</span>
+                    {% for parametro in parametros %}
+                        <span class="item">{{ parametro.id }}. {{ parametro.descricao }}</span>
+                    {% endfor %}
                 </div>
                 <div class="zona2">
                     <div class="descricao-campos">
