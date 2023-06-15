@@ -73,6 +73,10 @@
               height: 30px;
               margin-right: 10px;
             }
+            .second-column-label::before {
+            content: "❌";
+            display: inline-block;
+            }
             .button {
             padding: 10px 20px;
             color: #000000;
@@ -180,7 +184,7 @@
                             </div>
                             <div class="checkbox-item">
                                 <input type="checkbox" id="checkbox2">
-                                <label for="checkbox2"></label>
+                                <label for="checkbox2"  class="second-column-label"></label>
                             </div>
                         </div>
                         <div class="checkbox-row">
