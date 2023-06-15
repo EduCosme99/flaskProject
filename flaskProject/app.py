@@ -147,6 +147,26 @@ def hotmelt():
     return render_template('Hotmelt.html')
 
 
+@app.route('/soldadura')
+def soldadura():
+    return render_template('Soldadura.html')
+
+
+@app.route('/aparafusamento')
+def aparafusamento():
+    return render_template('Aparafusamento.html')
+
+
+@app.route('/ultrasons')
+def ultrasons():
+    return render_template('Ultrasons.html')
+
+
+@app.route('/seguranca')
+def seguranca():
+    return render_template('Segurança.html')
+
+
 @app.route('/pos_checklist')
 def pos_checklist():
     return render_template('Checklist.html')
@@ -202,14 +222,29 @@ def obs_hotmelt():
     return render_template('ObsHotmelt.html')
 
 
+@app.route('/obs_soldadura')
+def obs_soldadura():
+    return render_template('ObsSoldadura.html')
+
+
+@app.route('/obs_aparafusamento')
+def obs_aparafusamento():
+    return render_template('ObsAparafusamento.html')
+
+
+@app.route('/obs_ultrasons')
+def obs_ultrasons():
+    return render_template('ObsUltrasons.html')
+
+
+@app.route('/obs_seguranca')
+def obs_seguranca():
+    return render_template('ObsSeguranca.html')
+
+
 @app.route('/validacao')
 def validacao():
     return render_template('Validaçao.html')
-
-
-@app.route('/soldadura')
-def soldadura():
-    return render_template('Soldadura.html')
 
 
 if __name__ == '__main__':
