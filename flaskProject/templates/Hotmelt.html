@@ -141,28 +141,10 @@
     <body>
         <header>
             <nav>
-                <div class="nav-bar">
-                    <a class="logotipo" href="/supervisor">
+                <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+                    <a class="logotipo" href="/hotmelt">
                         <img src="/static/images/logo.png" alt="Continental" class="logo">
                     </a>
-                    <div class="menu">
-                        <ul class="nav-links">
-                            <li><a href="/supervisor">Home</a></li>
-                            <li><a href="/lista_turnos">Turnos</a></li>
-                            <li><a href="/lista_funcionarios">Funcionários</a></li>
-                            <li><a href="/lista_parametros">Parâmetros</a></li>
-                        </ul>
-                    </div>
-                    <div class="searchBox">
-                        <div class="searchToogle">
-                            <i class="fa-solid fa-magnifying-glass search"></i>
-                            <i class="fa-solid fa-xmark cancel"></i>
-                        </div>
-                        <div class="search-field">
-                            <input type="text" placeholder="Pesquisar...">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                    </div>
                 </div>
             </nav>
         </header>
@@ -233,10 +215,28 @@
             </div>
         </div>
         <div class="button-container">
-            <button class="button" onclick="location.href='/observacao'">Observações</button>
+            <button class="button" onclick="location.href='/obs_hotmelt'">Observações</button>
             <button class="button" onclick="location.href='/soldadura'">Soldadura</button>
         </div>
     </div>
+        <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
+            <span id="date"></span> - <span id="time"></span>
+        </div>
+    <script>
+        const body = document.querySelector("body"),
+            dateElem = document.querySelector("#date"),
+            timeElem = document.querySelector("#time");
+
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            dateElem.textContent = date;
+            timeElem.textContent = time;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
     <script>
         function restoreState() {
             //Restaurar estado das checkboxes

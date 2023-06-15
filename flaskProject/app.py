@@ -196,6 +196,11 @@ def observacao():
     return render_template('Observacoes.html')
 
 
+@app.route('/obs_hotmelt')
+def obs_hotmelt():
+    return render_template('ObsHotmelt.html')
+
+
 @app.route('/validacao')
 def validacao():
     return render_template('Validaçao.html')
