@@ -75,6 +75,40 @@
                 margin-top: 16.8px;
                 margin-right: 60px;
             }
+            input.custom-checkbox:checked {
+                position: relative;
+            }
+            input.custom-checkbox:checked::before {
+                content: 'S';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                font-size: 24px;
+                background-color: #FFFFFF;
+                color: forestgreen;
+                text-align: center;
+                border: 2px solid forestgreen;
+                box-sizing: border-box;
+            }
+            input.customized-checkbox:checked {
+                position: relative;
+            }
+            input.customized-checkbox:checked::before {
+                content: 'N';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                font-size: 24px;
+                background-color: #FFFFFF;
+                color: firebrick;
+                text-align: center;
+                border: 2px solid firebrick;
+                box-sizing: border-box;
+            }
             .checkbox-group {
                 margin-top: 15px;
             }
@@ -185,34 +219,34 @@
                     </div>
                     <div class="checkbox-group">
                         <label for="checkbox1">
-                            <input type="checkbox" id="checkbox1">
+                            <input type="checkbox" id="checkbox1" class="custom-checkbox">
                         </label>
                         <label for="checkbox7">
-                            <input type="checkbox" id="checkbox7">
+                            <input type="checkbox" id="checkbox7" class="customized-checkbox">
                         </label>
                         <label for="checkbox13">
-                            <input type="checkbox" id="checkbox13">
+                            <input type="checkbox" id="checkbox13" class="custom-checkbox">
                         </label>
                         <label for="checkbox19">
-                            <input type="checkbox" id="checkbox19">
+                            <input type="checkbox" id="checkbox19" class="customized-checkbox">
                         </label>
                         <label for="checkbox25">
-                            <input type="checkbox" id="checkbox25">
+                            <input type="checkbox" id="checkbox25" class="custom-checkbox">
                         </label>
                         <label for="checkbox31">
-                            <input type="checkbox" id="checkbox31">
+                            <input type="checkbox" id="checkbox31" class="customized-checkbox">
                         </label>
                         <label for="checkbox37">
-                            <input type="checkbox" id="checkbox37">
+                            <input type="checkbox" id="checkbox37" class="custom-checkbox">
                         </label>
                         <label for="checkbox43">
-                            <input type="checkbox" id="checkbox43">
+                            <input type="checkbox" id="checkbox43" class="customized-checkbox">
                         </label>
                         <label for="checkbox49">
-                            <input type="checkbox" id="checkbox49">
+                            <input type="checkbox" id="checkbox49" class="custom-checkbox">
                         </label>
                         <label for="checkbox2">
-                            <input type="checkbox" id="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="customized-checkbox">
                         </label>
                     </div>
                 </div>
