@@ -1,307 +1,308 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
-  <title>Pós Inicialização</title>
-  <link rel="stylesheet" href="/static/style/navigation_bar.css">
-  <style>
-    header {
-      height: 80px;
-      background-color: #FFA500;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      display: flex;
-      max-height: 100vh;
-      overflow-y: auto;
-    }
-    .zona1 {
-      flex: 1;
-      height: 500px;
-      background-color: white;
-      padding: 20px;
-      margin-top: 40px;
-      margin-rigth: 40px;
-    }
-   .zona1 .item {
-      background-color: lightgray;
-      display: block;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .zona2 {
-      flex: 1;
-      height: 500px;
-      background-color: white;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: center;
-    }
-    .zona2 p {
-      margin-bottom: 20px;
-    }
-    .zona1 span,
-    .zona2 label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    .zona2 .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .zona2 .checkbox-group label {
-      flex-basis: 12.5%;
-      display: flex;
-      align-items: center;
-    }
-    .zona2 .checkbox-group input[type="checkbox"] {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-      margin-top: 12px;
-    }
-    /*.vertical-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      border-right: 1px solid black;
-    }*/
-    .button {
-      padding: 10px 20px;
-      color: #000000;
-      background: #FFA500;
-      font-family: "Trebuchet MS", sans-serif;
-      font-size: 14px;
-      border-radius: 5px;
-      border: none;
-      display: inline-block;
-      text-align: center;
-      user-select: none;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: right;
-      margin-top: 0px;
-    }
-    .button:hover {
-      background: lightgrey;
-    }
-    .hora-campos {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-    .hora-item {
-        display: flex;
-        align-items: center;
-        margin-right: 100px;
-    }
-    .hora-item label {
-        margin-right: 5px;
-    }
-    .hora-item input {
-        width: 75px;
-        padding: 5px;
-        border: none;
-        border-bottom: 1px solid black;
-        background-color: transparent;
-    }
-    .descricao-campos {
-      display: flex;
-      margin-top: 0px;
-    }
-
-    .descricao-texto {
-      display: inline-block;
-      margin-right: 80px;
-      margin-bottom: 10px;
-    }
-
-
-
-  </style>
-</head>
-  <body>
-  <header>
-      <nav>
-            <div class="nav-bar">
-                <a class="logotipo" href="/supervisor">
-                    <img src="/static/images/logo.png" alt="Continental" class="logo">
-                </a>
-                <div class="menu">
-                    <ul class="nav-links">
-                        <li><a href="/supervisor">Home</a></li>
-                        <li><a href="/lista_turnos">Turnos</a></li>
-                        <li><a href="/lista_funcionarios">Funcionários</a></li>
-                        <li><a href="/lista_parametros">Parâmetros</a></li>
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/images/logohorse.png" sizes="32x32" />
+        <title>Pós inicialização</title>
+        <link rel="stylesheet" href="/static/style/navigation_bar.css">
+        <style>
+            header {
+                height: 70px;
+                background-color: #FFA500;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            h2 {
+                font-size: 22.5px;
+            }
+            .container {
+                display: flex;
+                max-height: 100vh;
+                overflow-y: auto;
+            }
+            .zona1 {
+                flex: 1;
+                height: 515px;
+                background-color: white;
+                padding: 20px;
+                margin-top: 60px;
+                margin-left: 25px;
+            }
+            .zona1 .item {
+                background-color: lightgray;
+                display: block;
+                padding: 10px;
+                margin-top: 16.5px;
+                margin-right: 25px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+            .zona2 {
+                flex: 1;
+                height: 450px;
+                background-color: white;
+                margin-top: 20px;
+                margin-right: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+            .zona2 p {
+                margin-bottom: 20px;
+            }
+            .zona1 span,
+            .zona2 label {
+                display: block;
+                margin-bottom: 5px;
+            }
+            .zona2 .checkbox-row {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 12.5px;
+            }
+            .zona2 .checkbox-item {
+                display: flex;
+                align-items: center;
+                width: 19%;
+                margin-bottom: 10px;
+            }
+            .zona2 .checkbox-item input[type="checkbox"] {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+            }
+            .button {
+                padding: 10px 20px;
+                color: #000000;
+                background: #FFA500;
+                font-family: "Trebuchet MS", sans-serif;
+                font-size: 14px;
+                border-radius: 5px;
+                border: none;
+                display: inline-block;
+                text-align: center;
+                user-select: none;
+                cursor: pointer;
+                margin: 5px;
+                transition: box-shadow 0.15s, opacity 0.15s;
+            }
+            .button-container {
+                display: flex;
+                justify-content: right;
+                margin-top: 15px;
+            }
+            .button:hover {
+                box-shadow: 2px 2px 5px rgba(10,10,10,0.2);
+            }
+            .hora-campos {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 45px;
+            }
+            .hora-item {
+                display: flex;
+                align-items: center;
+                margin-right: 100px;
+            }
+            .hora-item label {
+                margin-right: 5px;
+            }
+            .hora-item input {
+                width: 75px;
+                padding: 5px;
+                border: none;
+                border-bottom: 1px solid black;
+                background-color: transparent;
+            }
+            .descricao-campos {
+                display: flex;
+                margin-top: 0px;
+            }
+            .primeira-descricao-texto {
+                color: #FFA500;
+                display: inline-block;
+                margin-right: 200px;
+                margin-bottom: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            .segunda-descricao-texto {
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-bar" style="display: flex; justify-content: center; align-items: center;">
+                    <a class="logotipo" href="/pos_checklist">
+                        <img src="/static/images/logo.png" alt="Continental" class="logo">
+                    </a>
                 </div>
-                <div class="searchBox">
-                    <div class="searchToogle">
-                        <i class="fa-solid fa-magnifying-glass search"></i>
-                        <i class="fa-solid fa-xmark cancel"></i>
+            </nav>
+        </header>
+    <div class="content">
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="zona1">
+                    <h2>Operação de Verificação após iniciar produção:</h2>
+                    {% for parametro in parametros %}
+                        <span class="item">{{ parametro.id }}. {{ parametro.descricao }}</span>
+                    {% endfor %}
+                </div>
+                <div class="zona2">
+                    <div class="descricao-campos">
+                        <span class="primeira-descricao-texto">Início do turno</span>
+                        <span class="segunda-descricao-texto">Verificar no início de cada produção</span>
                     </div>
-                    <div class="search-field">
-                        <input type="text" placeholder="Pesquisar...">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="hora-campos">
+                        <div class="hora-item">
+                            <label for="h1">Hora:</label>
+                            <input type="time" id="h1" name="h1">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h2">Hora:</label>
+                            <input type="time" id="h2" name="h2">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h3">Hora:</label>
+                            <input type="time" id="h3" name="h3">
+                        </div>
+                        <div class="hora-item">
+                            <label for="h4">Hora:</label>
+                            <input type="time" id="h4" name="h4">
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox2">
+                            <label for="checkbox2"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox3">
+                            <label for="checkbox3"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox4">
+                            <label for="checkbox4"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox5">
+                            <label for="checkbox5"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox6">
+                            <label for="checkbox6"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox7">
+                            <label for="checkbox7"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox8">
+                            <label for="checkbox8"></label>
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox9">
+                            <label for="checkbox9"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox10">
+                            <label for="checkbox10"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox11">
+                            <label for="checkbox11"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox12">
+                            <label for="checkbox12"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox13">
+                            <label for="checkbox13"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox14">
+                            <label for="checkbox14"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox15">
+                            <label for="checkbox15"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox16">
+                            <label for="checkbox16"></label>
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox17">
+                            <label for="checkbox17"></label>
+                        </div>
+                        <div class="checkbox-item" style="margin-left: -56.9px !important;">
+                            <input type="checkbox" id="checkbox18">
+                            <label for="checkbox18"></label>
+                        </div>
+                    </div>
+                    <div class="checkbox-row">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox19">
+                            <label for="checkbox19"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox20">
+                            <label for="checkbox20"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox21">
+                            <label for="checkbox21"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox22">
+                            <label for="checkbox22"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox23">
+                            <label for="checkbox23"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox24">
+                            <label for="checkbox24"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox25">
+                            <label for="checkbox25"></label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="checkbox26">
+                            <label for="checkbox26"></label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </nav>
-    </header>
- <div class="content">
-  <div class="content-wrapper">
-  <div class="container">
-      <div class="zona1">
-      <h2>Operação de Verificação após iniciar produção:</h2>
-      <span class="item">O programa do AOI está a funcionar corretamente?</span>
-      <span class="item">A 1ª peça validada foi produzida de acordo com as IFCs e está de acordo com o circuito de auto-controlo?</span>
-      <span class="item">Os controlos SPC foram feitos e estão OK?</span>
-      <span class="item">A ultima peça produzida está igual à 1ª peça validada de acordo com o circuito de autocontrolo (Esta verificação deve ser feita no fim de produção de cada referência).</span>
-    </div>
-    <div class="zona2">
-        <div class="descricao-campos">
-            <span class="primeira-descricao-texto">Início do turno</span>
-            <span class="segunda-descricao-texto">Verificar no início de cada produção</span>
         </div>
-        <div class="hora-campos">
-            <div class="hora-item">
-                <label for="h1">Hora:</label>
-                <input type="time" id="h1" name="h1">
-            </div>
-            <div class="hora-item">
-                <label for="h2">Hora:</label>
-                <input type="time" id="h2" name="h2">
-            </div>
-            <div class="hora-item">
-                <label for="h3">Hora:</label>
-                <input type="time" id="h3" name="h3">
-            </div>
-            <div class="hora-item">
-                <label for="h4">Hora:</label>
-                <input type="time" id="h4" name="h4">
-            </div>
+        <div class="button-container">
+            <button class="button" onclick="location.href='/obs_final'">Observações</button>
+            <button class="button" style="background-color: forestgreen; color: #FFFFFF" onclick="location.href='/validacao'">Validação</button>
         </div>
-      <div class="checkbox-group">
-        <label for="checkbox1">
-          <input type="checkbox" id="checkbox1">
-        </label>
-        <label for="checkbox7">
-          <input type="checkbox" id="checkbox7">
-        </label>
-        <label for="checkbox13">
-          <input type="checkbox" id="checkbox13">
-        </label>
-        <label for="checkbox19">
-          <input type="checkbox" id="checkbox19">
-        </label>
-        <label for="checkbox25">
-          <input type="checkbox" id="checkbox25">
-        </label>
-        <label for="checkbox31">
-          <input type="checkbox" id="checkbox31">
-        </label>
-        <label for="checkbox37">
-          <input type="checkbox" id="checkbox37">
-        </label>
-        <label for="checkbox43">
-          <input type="checkbox" id="checkbox43">
-        </label>
-        <label for="checkbox2">
-          <input type="checkbox" id="checkbox2">
-        </label>
-        <label for="checkbox8">
-          <input type="checkbox" id="checkbox8">
-        </label>
-        <label for="checkbox14">
-          <input type="checkbox" id="checkbox14">
-        </label>
-        <label for="checkbox20">
-          <input type="checkbox" id="checkbox20">
-        </label>
-        <label for="checkbox26">
-          <input type="checkbox" id="checkbox26">
-        </label>
-        <label for="checkbox32">
-          <input type="checkbox" id="checkbox32">
-        </label>
-        <label for="checkbox38">
-          <input type="checkbox" id="checkbox38">
-        </label>
-        <label for="checkbox44">
-          <input type="checkbox" id="checkbox44">
-        </label>
-        <label for="checkbox3">
-          <input type="checkbox" id="checkbox3">
-        </label>
-        <label for="checkbox9">
-          <input type="checkbox" id="checkbox9">
-        </label>
-        <label for="checkbox15">
-          <input type="checkbox" id="checkbox15">
-        </label>
-        <label for="checkbox21">
-          <input type="checkbox" id="checkbox21">
-        </label>
-        <label for="checkbox27">
-          <input type="checkbox" id="checkbox27">
-        </label>
-        <label for="checkbox33">
-          <input type="checkbox" id="checkbox33">
-        </label>
-        <label for="checkbox39">
-          <input type="checkbox" id="checkbox39">
-        </label>
-        <label for="checkbox45">
-          <input type="checkbox" id="checkbox45">
-        </label>
-        <label for="checkbox4">
-          <input type="checkbox" id="checkbox4">
-        </label>
-        <label for="checkbox10">
-          <input type="checkbox" id="checkbox10">
-        </label>
-        <label for="checkbox16">
-          <input type="checkbox" id="checkbox16">
-        </label>
-        <label for="checkbox22">
-          <input type="checkbox" id="checkbox22">
-        </label>
-        <label for="checkbox28">
-          <input type="checkbox" id="checkbox28">
-        </label>
-        <label for="checkbox34">
-          <input type="checkbox" id="checkbox34">
-        </label>
-        <label for="checkbox40">
-          <input type="checkbox" id="checkbox40">
-        </label>
-        <label for="checkbox46">
-          <input type="checkbox" id="checkbox46">
-        </label>
-      </div>
     </div>
-    </div>
-    <div class="button-container">
-      <button class="button">Observações</button>
-      <button class="button">Concluir</button>
-    </div>
-  </div>
-     <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
+    <div class="date-time" style="position: fixed; bottom: 0; left: 0; padding: 5px;">
         <span id="date"></span> - <span id="time"></span>
     </div>
     <script>
@@ -389,6 +390,4 @@
         });
     </script>
     </body>
-</html>
-</body>
 </html>
